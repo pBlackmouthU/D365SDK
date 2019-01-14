@@ -1,0 +1,1160 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="_css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <style>
+        body {
+            text-align: justify;
+            font-family: Tahoma;
+        }
+
+        .logo {
+            height: 40px;
+            margin-top: -10px;
+        }
+
+        h1 {
+            color: #100845;
+        }
+
+        h2 {
+            color: #100845;
+        }
+
+        h3 {
+            color: #2246ba;
+        }
+
+        h4 {
+            color: #2246ba;
+            font-style: italic;
+            margin-left: 30px;
+        }
+
+        p {
+            color: #393d76;
+            font-size: 16px;
+        }
+
+        ul {
+            font-size: 16px;
+        }
+
+        .lista-temario {
+            list-style-type: none;
+            color: #393d76;
+            margin-left: 16px;
+        }
+
+        .parrafo-temario {
+            margin-left: 40px;
+            font-size: 16px;
+        }
+
+        .titulo-subtema {
+            color: #2246ba;
+        }
+
+        .indice-link {
+            text-decoration: none;
+            color: #393d76;
+            font-size: 16px;
+        }
+
+            .indice-link:hover {
+                color: #2246ba;
+            }
+
+            .indice-link:visited {
+                text-decoration: none;
+                color: #393d76;
+            }
+
+        .imagen-centrada {
+            margin-left: auto;
+            margin-right: auto;
+            width: 1000px;
+        }
+
+        .ruta {
+            display: block;
+            color: #333;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-weight: bold;
+            padding: 4px;
+            margin-bottom: 10px;
+        }
+
+        .titulo-tema-contenido {
+            padding-top: 30px;
+            border-bottom: 3px solid black;
+        }
+
+        .titulo-subtema {
+            padding-top: 100px;
+            border-bottom: 1px solid #2246ba;
+        }
+
+        form {
+            padding-bottom: 40px;
+        }
+
+        .boton-temario {
+            color: #2246ba;
+            border-radius: 4px;
+            width: 30px;
+            padding-left: 7px;
+            float: right;
+            left: 700px;
+            cursor: pointer;
+        }
+
+            .boton-temario:hover {
+                background-color: #a3c7fa;
+            }
+
+        .parrafo-contenido-steps {
+            margin-left: 35px;
+            color: #393d76;
+        }
+
+        .lista-contenido-steps {
+            margin-left: 35px;
+            color: #393d76;
+        }
+
+        .ruta-steps {
+            display: block;
+            color: #333;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-weight: bold;
+            padding: 4px;
+            margin-left: 35px;
+        }
+
+        .titulo-parrafo-contenido {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 24px;
+            color: #AAA;
+        }
+
+        .titulo-referencia {
+            font-size: 16px;
+            color: #777;
+            font-weight: bold;
+        }
+
+        .link-referencia {
+            padding-left: 20px;
+        }
+
+        ol.lista-codigo li {
+            padding-top: 5px;
+            padding-bottom: 5px !important;
+            color: #393d76;
+        }
+
+        ul li {
+            padding-top: 5px;
+            padding-bottom: 5px !important;
+        }
+
+        .pre {
+            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            display: block;
+            padding: 9.5px;
+            margin: 0 0 10px;
+            font-size: 13px;
+            line-height: 1.4285;
+            color: #333;
+            word-break: break-all;
+            word-wrap: break-word;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+        }
+        .titulo-list {
+            font-size: 16px;
+            color: #2246ba;
+            padding-left: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-inverse" role="navigation">
+            <!-- El logotipo y el icono que despliega el menú se agrupan
+            para mostrarlos mejor en los dispositivos móviles -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Desplegar navegación</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="Home.html">
+                    <img src="_imgs/windows2.png" class="logo" />
+                </a>
+            </div>
+
+            <!-- Agrupar los enlaces de navegación, los formularios y cualquier
+            otro elemento que se pueda ocultar al minimizar la barra -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="Contactos/ListaContactos.html">Contactos</a></li>
+                    <li><a href="#">Cuentas</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- BREADCRUMB -->
+        <ol class="breadcrumb">
+            <li class="active">Inicio</li>
+        </ol>
+
+        <form id="form1">
+
+            <div class="jumbotron">
+                <div class="container">
+                    <h1>Desarrollo del lado del cliente</h1>
+                    <p>
+                        Todo lo que necesitas para comenzar a desarrollar aplicaciones web de lado del cliente para Dynamics CRM.
+                    </p>
+                </div>
+            </div>
+            <h2>Objetivo del curso</h2>
+            <p>
+                Proveer una base solida de conocimeinto para el desarrollo de aplicaciones y extensiones para Dynamics CRM, utilizando tecnologías y métodos de desarrollo modernos para facilitar su comprensión.
+            </p>
+            <h2>Alcance de este curso</h2>
+            <p>
+                Este curso no pretende ser un curso de desarrollo de aplicaciones Web, estará enfocado únicamente en medios y herramientas necesarios
+                para lograr completar los objetivos de cada tema propuesto en relación con Dynamics CRM, por lo que es necesario contar con conocimiento previo y bien simentado del
+                desarrollo de aplicaiones Web en todas sus formas.
+            </p>
+            <h2 id="Temario">Temario</h2>
+            <h4><a href="#Tema1">1. Web Api Dynamics 365</a></h4>
+            <p class="parrafo-temario">
+                En esta sección construiremos una pequeña aplicación web que nos permita realizar las operaciones básicas en Dynamics CRM
+                o lo que comunmente se le denomina una aplicación <b>CRUD</b> con la <b>Web Api</b> de Dynamics 365.
+            </p>
+            <ol class="lista-temario">
+                <li><a href="#ArquitecturaApp" class="indice-link">1.1 - Arquitectura de la applicación</a></li>
+                <li><a href="#VisualStudio" class="indice-link">1.2 - Configurando la solución de trabajo para Visual Studio</a></li>
+                <li><a href="#ConexionCRM" class="indice-link">1.3 - Conexión a Dynamics CRM</a></li>
+                <li><a href="#ObtenerListadoCRM" class="indice-link">1.4 - Obtener listado de registros de entidad</a></li>
+                <li><a href="#CrearEntidadCRM" class="indice-link">1.5 - Crear un registro de entidad</a></li>
+                <li><a href="#ObtenerEntidadCRM" class="indice-link">1.6 - Obtener un registro de entidad</a></li>
+                <li><a href="#ActualizarEntidadCRM" class="indice-link">1.7 - Actualizar un registro de entidad</a></li>
+                <li><a href="#EliminarEntidadCRM" class="indice-link">1.8 - Borrar un registro de entidad</a></li>
+                <li><a href="#XrmToolBox" class="indice-link">1.9 - Xrm Tool Box</a></li>
+                <li><a href="#PracticaSDKCRM" class="indice-link">1.10 - Práctica</a></li>                
+                <li><a href="#OtrasAccionesCRM" class="indice-link">1.11 - Complementos y otras acciones</a></li>
+            </ol>
+            <h4><a href="#Tema2">2. Progamación Javascript de lado del cliente</a></h4>
+            <p class="parrafo-temario">
+                En esta sección construiremos un nuevo Web Resource HTML que interactua con los atributos de formulario y daremos un vista rápida a algunas de los eventos que se pueden
+                realizar en un formulario de Dynamics 365.
+            </p>
+            <ol class="lista-temario">
+                <li><a href="#TiposFormularioEventos" class="indice-link">2.1 - Tipos de formulario y eventos</a></li>
+                <li><a href="#LeerAsignarValorAtributo" class="indice-link">2.2 - Leer y asignar valores de atributos de formulario</a></li>
+                <li><a href="#GuardarFormularioJavascript" class="indice-link">2.3 - Guardar un formulario desde javascript</a></li>
+                <li><a href="#PasarValoresFormulario" class="indice-link">2.4 - Pasar valores de formulario a un Web Resource</a></li>
+                <li><a href="#PracticaEventos" class="indice-link">2.5 - Práctica</a></li>
+                <li><a href="#Complementos" class="indice-link">2.6 - Complementos</a></li>
+            </ol>
+
+
+            <!-- TEMA 1 - 1. Web Api Dynamics 365 -->
+            <h1 id="Tema1" class="titulo-tema-contenido">1. Web Api Dynamics 365</h1>
+            <p class="parrafo-contenido">
+                Aprenderemos a consumir la nueva Web Api de Dynamics 365, la implementaremos en una pequeña librería de jQuery que nos ayude a conectarnos a sus servicios web de
+                una forma fácil y estructurada.
+            </p>
+            <p>Llevaremos como referencia la documentación en línea de la Web Api:</p>
+            <p><b>Referencia: </b><a href="https://msdn.microsoft.com/es-es/library/mt593051.aspx" target="_blank">Use la API web de Microsoft Dynamics 365</a></p>
+
+
+
+
+
+
+            <!-- 1.1 - Tipos de formulario y eventos -->
+            <h3 id="ArquitecturaApp" class="titulo-subtema">1.1 - Arquitectura de las applicaciónes <a href="#Temario"><i class='fa fa-angle-double-up boton-temario'></i></a></h3>
+            <p>
+                Una de las aplicaciónes es la misma que utilizamos en el tema de desarrollo .NET, lo único que cambiaremos es la capa de conexión con CRM.
+            </p>
+            <p class="titulo-parrafo-contenido">
+                Diagrama de alto nivel
+            </p>
+            <p class="parrafo-contenido">
+                Para comprender mejor como estará estructurada las aplicaciónes veamos los siguientes diagramas:
+            </p>
+            <p class="text-center">
+                <img src="_imgs/1.Diagrama1.png" />
+            </p>
+            <p>
+                En el diagrama podemos ver una vista general de la arquitectura, en primer lugar veamos el Web Resource que se encuentra dentro del formulario de CRM, este Web Resource
+                necesita interactuar con el objeto Xrm y la Web Api para acceder a diversa información de dynamics 365.
+            </p>
+            <p>
+                Podemos ver una pequeña descripción de cada elemento:
+            </p>
+            <ul>
+                <li>
+                    <b>Xrm:</b> Este objeto contiene varios espacios de nombres para interactuar de varias maneras con Dynamics 365 de lado del cliente, una de ellas y por la que lo ocuparemos para este ejercicio
+                    es para interactuar con el formulario de <b>Contacto</b> accediendo a los atributos para leerlos y/o modificarlos por medio del espacio de nombres <b>Xrm.Page</b>.
+                </li>
+                <li><b>Web Api:</b> Es un servicio REST que permite hacer peticiones HTTP para realizar casi toda clase de acciones en Dynamics CRM.</li>
+                <li><b>Web Resource:</b> Será una página web HTML que presentará la información del contacto de una forma distinta a la tradicional de Dynamics 365.</li>
+                <li><b>Eventos de formulario: </b> En los eventos del formulario añadiremos código personalizado para realizar acciones en el Web Resource.</li>
+            </ul>
+            <p class="titulo-parrafo-contenido">
+                Diagrama de un segundo nivel abajo
+            </p>
+            <p>
+                Ahora veremos a un segundo nivel abajo la aplicación, un poco más de detalle del como se organizará la arquitectura de nuestras aplicaciones permitiendonos comprender como construir la base
+                de desarrollo.
+            </p>
+            <p class="text-center">
+                <img src="_imgs/2.Diagrama2.png" />
+            </p>
+            <p>
+                Ahora, en el recuadro de la derecha podemos ver como está estructurado el Web Resource viendo con un poco más de detalle, el como interactua con los otros dos objetos de Dynamics 365.
+            </p>
+            <p>
+                A continuación se explica cada elemento:
+            </p>
+            <ul>
+                <li><b>crm.js: </b>Esta librería javascript es la accede directamente con la Web Api para realizar operaciones en Dynamics 365.</li>
+                <li><b>crm.forms.js: </b>Esta librería actuará como nuestra interfaz de comunicación entre el Web Resource y el formulario padr que lo contiene, en este caso el formulario de Dynamics 365. </li>
+                <li>
+                    <b>crm.contexto.udem.js</b> Esta librería contendrá toda la lógica de negocio específica para UDEM de nuestras aplicaciones, interactuando con las otras 2 librerías para interactuar
+                    con la Wbe Api y con los formularios Web.
+                </li>
+                <li><b>Scripts de página: </b> Aquí es donde se sitúa la lógica especifica de lá página en cuestion, consume las librerías de crm.forms.js y crm.contexto.udem.js e interactúa con el DOM.</li>
+                <li><b>Eventos de formulario: </b> Agregarémos código personalizado al dispararse ciertos eventos en el formulario de Dynamics 365.</li>
+                <li><b>contact.form.js: </b> Esta será una librería de controladores de evento de formulario y eventos de atributo que transportarán información del formulario de
+                Dynamics 365 a funciones declaradas a nivel <b>Scripts de página</b> del Web Resource.</li>
+            </ul>
+
+            <!-- 1.2 - Configurando la solución de trabajo para Visual Studio  -->
+            <h3 id="VisualStudio" class="titulo-subtema">1.2 - Configurando la solución de trabajo para Visual Studio <a href="#Temario"><i class='fa fa-angle-double-up boton-temario'></i></a></h3>
+            <p>
+                Ahora veremos como están organizadas las carpetas y archivos que generaremos en la solución para facilitarnos el mantenimiento y el desarrollo.
+
+            </p>
+
+            <p class="titulo-parrafo-contenido">
+                Estructura de carpetas
+            </p>
+            <p class="text-center">
+                <img src="_imgs/3.Carpetas.png" />
+            </p>
+            <ul>
+                <li><b>_css: </b> Contiene las hojas de estilos que se usan en las aplicaciones.</li>
+                <li><b>_formscripts: </b> Contiene los scripts que serán usados en los formularios de Dynamics 365.</li>
+                <li><b>_imgs: </b>Contiene las imágenes que esarán las aplicaciones.</li>
+                <li><b>_libs: </b>Contiene las librerías javascript de terceros. Ej. jQuery, Bootstrap, etc.</li>
+                <li><b>_scripts: </b>Contiene los scripts propios de las aplicaciones.</li>
+                <li><b>Contactos: </b>Contiene los arhivos de la aplicación CRUD.</li>
+                <li><b>Formularios: </b>Contiene los archivos de los Web Repurces Html que será incrustado en el formulario de Dynamics 365.</li>
+            </ul>
+
+
+
+            <!-- 1.3 - Conexión a Dynamics CRM -->
+            <h3 id="ConexionCRM" class="titulo-subtema">1.3 - Conexión a Dynamics CRM<a href="#Temario"><i class='fa fa-angle-double-up boton-temario'></i></a></h3>
+            <p class="titulo-parrafo-contenido">
+                ¿Conectarse a Dynamics 365?
+            </p>
+            <p>
+                Si vemos el el diagrama del punto <a href="#ArquitecturaApp">1.1 - Arquitectura de la applicación</a>, nos damos cuenta que el Web Resource se encuentra enbebido en un formulario de Dynamics 365, por lo tanto el Web Resource se encuentra dentro
+                de Dynamics 365 y no requiere de una conexión como tal, pero si es necesario consultar la Web Api desde el mismo dominio, esto quiere decir que el Web Resource,
+                no puede ser una página HTML externa a Dynamics 365.
+            </p>
+            <p class="titulo-parrafo-contenido">
+                URL Web Api
+            </p>
+            <p>
+                La URL de la Web Api se encuentra definida con la siguiente estructura:
+            </p>
+            <div class="ruta">
+                [URL Tenant u Organización]/api/data/[Versión de Web Api]
+            </div>
+            <p>
+                Actualmente la versión de la Web Api es la <b>8.2</b>, y debe de estar precedida por la letra <b>v</b>. Ej. v8.2
+            </p>
+
+
+            <!-- 1.4 - Obtener listado de registros de entidad -->
+            <h3 id="ObtenerListadoCRM" class="titulo-subtema">1.4 - Obtener listado de registros de entidad<a href="#Temario"><i class='fa fa-angle-double-up boton-temario'></i></a></h3>
+            <p>
+                El método HTTP para hacer una consulta aun listado de registro de entidades es <b>GET</b>.
+            </p>
+            <p>
+                La estructura de la url para realizar la consulta a un listado de registro de entidades es la siguiente:
+            </p>
+            <div class="ruta">
+                GET  -  [URL de Tenant o Organization]/api/data/v8.2/[EntitySetName][?$select=[columns]]  -  HTTP/1.1
+            </div>
+            <ul>
+                <li>
+                    <b>EntitySetName:</b> Este nombre No es el nombre de la entidad, Dynamics CRM le asigna un nombre en plural al nombre de la entidad. Este nombre está definido en la metadata de la entidad y para
+                    visualizarlo es necesario utilizar una herramienta de terceros explicada en el punto <a href="#XrmToolBox">1.9 - Xrm Tool Box.</a>
+                </li>
+                <li>
+                    <b>$select=[columns]: </b> Se especifícan los nombres de esquema de las columnas que serán obtenidas separadas por coma(,) remplazando <b>[columns]</b> en el query.
+                    Este parámetro es opcional y si no se pasa un $select al query, por default la Web Api obtiene todas las columnas de la entidad. <b>Esto es una mala práctica dado que le pega al rendimiento de la consulta.</b>
+                </li>
+            </ul>
+            <p>
+                Cuando la petición es por algúna petición HTTP desde un lenguaje de desarrollo es necesario agregar las siguientes cabeceras HTTP:
+            </p>
+            <ul>
+                <li>Accept: application/json</li>
+                <li>OData-MaxVersion: 4.0</li>
+                <li>OData-Version: 4.0</li>
+            </ul>
+            <p>
+                Para ver más información relacionada con las consultas a la Web Api, vea la siguiente referencia:
+            </p>
+            <p>
+                <b>Referencia: </b><a href="https://msdn.microsoft.com/es-es/library/gg334767.aspx" target="_blank">Consultar datos utilizando la API web</a> <br />
+                <b>Referencia: </b><a href="https://msdn.microsoft.com/es-es/library/mt607533.aspx" target="_blank">Recuperar y ejecutar consultas predefinidas</a>
+            </p>
+
+            <!-- 1.5 - Crear un registro de entidad -->
+            <h3 id="CrearEntidadCRM" class="titulo-subtema">1.5 - Crear un registro de entidad<a href="#Temario"><i class='fa fa-angle-double-up boton-temario'></i></a></h3>
+            <p>
+                La estructura de la url para crear un registro de entidad es la siguiente:
+            </p>
+            <div class="ruta">
+                POST  -  [URL de Tenant o Organization]/api/data/v8.2/[EntitySetName]  -  HTTP/1.1
+            </div>
+            <ul>
+                <li>
+                    <b>EntitySetName:</b> Este nombre No es el nombre de la entidad, Dynamics CRM le asigna un nombre en plural al nombre de la entidad. Este nombre está definido en la metadata de la entidad y para
+                    visualizarlo es necesario utilizar una herramienta de terceros explicada en el punto <a href="#XrmToolBox">1.9 - Xrm Tool Box.</a>
+                </li>
+            </ul>
+            <p>
+                y es necesario pasar el objeto json que deseamos crear en el <b>Body</b> del mensaje:
+            </p>
+            <div class="pre">
+                    {
+                        "atributo1": "valor1",
+                        "atributo2": "valor2",
+                        .
+                        .
+                        .
+                        "atributoN": "valorN"
+                    }
+            </div>
+            <p>
+                Cuando la petición es por algúna petición HTTP desde un lenguaje de desarrollo es necesario agregar las siguientes cabeceras HTTP:
+            </p>
+            <ul>
+                <li>Accept: application/json</li>
+                <li>OData-MaxVersion: 4.0</li>
+                <li>OData-Version: 4.0</li>
+            </ul>
+            <p>
+                Para ver más información relacionada con la creación de registros con la Web Api, vea la siguiente referencia:
+            </p>
+            <p>
+                <b>Referencia: </b><a href="https://msdn.microsoft.com/es-es/library/gg328090.aspx" target="_blank">Cree una entidad usando API web</a> <br />
+            </p>
+
+
+
+            <!-- 1.6 - Obtener un registro de entidad -->
+            <h3 id="ObtenerEntidadCRM" class="titulo-subtema">1.6 - Obtener un registro de entidad<a href="#Temario"><i class='fa fa-angle-double-up boton-temario'></i></a></h3>
+            <p>
+                La estructura de la url para realizar la consulta a un registro de entidad es la siguiente:
+            </p>
+            <div class="ruta">
+                GET  -  [URL de Tenant o Organization]/api/data/v8.2/[EntitySetName(ID)][?$select=[columns]]  -  HTTP/1.1
+            </div>
+            <ul>
+                <li>
+                    <b>EntitySetName:</b> Este nombre No es el nombre de la entidad, Dynamics CRM le asigna un nombre en plural al nombre de la entidad. Este nombre está definido en la metadata de la entidad y para
+                    visualizarlo es necesario utilizar una herramienta de terceros explicada en el punto <a href="#XrmToolBox">1.9 - Xrm Tool Box.</a>
+                </li>
+                <li>
+                    <b>ID: </b> Este es el identificador del registro que se quiere consultar (GUID).
+                </li>
+                <li>
+                    <b>$select=[columns]: </b> Se especifícan los nombres de esquema de las columnas que serán obtenidas separadas por coma(,) remplazando <b>[columns]</b> en el query.
+                    Este parámetro es opcional y si no se pasa un $select al query, por default la Web Api obtiene todas las columnas de la entidad. <b>Esto es una mala práctica dado que le pega al rendimiento de la consulta.</b>
+                </li>
+            </ul>
+            <p>
+                Cuando la petición es por algúna petición HTTP desde un lenguaje de desarrollo es necesario agregar las siguientes cabeceras HTTP:
+            </p>
+            <ul>
+                <li>Accept: application/json</li>
+                <li>OData-MaxVersion: 4.0</li>
+                <li>OData-Version: 4.0</li>
+            </ul>
+            <p>
+                Para ver más información relacionada con la consulta a la Web Api, vea la siguiente referencia:
+            </p>
+            <p>
+                <b>Referencia: </b><a href="https://msdn.microsoft.com/es-es/library/mt607871.aspx" target="_blank">Recuperar una entidad usando API web</a> <br />
+            </p>
+
+
+
+
+
+
+            <!-- 1.7 - Actualizar un registro de entidad -->
+            <h3 id="ActualizarEntidadCRM" class="titulo-subtema">1.7 - Actualizar un registro de entidad<a href="#Temario"><i class='fa fa-angle-double-up boton-temario'></i></a></h3>
+            <p>
+                La estructura de la url para actualizar un registro de entidad es la siguiente:
+            </p>
+            <div class="ruta">
+                PATCH  -  [URL de Tenant o Organization]/api/data/v8.2/[EntitySetName(ID)]  -  HTTP/1.1
+            </div>
+            <ul>
+                <li>
+                    <b>EntitySetName:</b> Este nombre No es el nombre de la entidad, Dynamics CRM le asigna un nombre en plural al nombre de la entidad. Este nombre está definido en la metadata de la entidad y para
+                    visualizarlo es necesario utilizar una herramienta de terceros explicada en el punto <a href="#XrmToolBox">1.9 - Xrm Tool Box.</a>
+                </li>
+                <li>
+                    <b>ID: </b> Este es el identificador del registro que se quiere consultar (GUID).
+                </li>
+            </ul>
+            <p>
+                y es necesario pasar el objeto json que deseamos actualizar en el <b>Body</b> del mensaje:
+            </p>
+            <div class="pre">
+                {
+                "atributo1": "valor1",
+                "atributo2": "valor2",
+                .
+                .
+                .
+                "atributoN": "valorN"
+                }
+            </div>
+            <p>
+                Cuando la petición es por algúna petición HTTP desde un lenguaje de desarrollo es necesario agregar las siguientes cabeceras HTTP:
+            </p>
+            <ul>
+                <li>Accept: application/json</li>
+                <li>OData-MaxVersion: 4.0</li>
+                <li>OData-Version: 4.0</li>
+            </ul>
+            <p>
+                Para ver más información relacionada con la actualización de registros con la Web Api, vea la siguiente referencia:
+            </p>
+            <p>
+                <b>Referencia: </b><a href="https://msdn.microsoft.com/es-es/library/mt607664.aspx" target="_blank">Actualizar y eliminar entidades mediante la API web</a> <br />
+            </p>
+
+
+
+
+            <!-- 1.8 - Borrar un registro de entidad -->
+            <h3 id="EliminarEntidadCRM" class="titulo-subtema">1.8 - Borrar un registro de entidad<a href="#Temario"><i class='fa fa-angle-double-up boton-temario'></i></a></h3>
+            <p>
+                La estructura de la url para realizar eliminar un registro de entidad es la siguiente:
+            </p>
+            <div class="ruta">
+                DELETE  -  [URL de Tenant o Organization]/api/data/v8.2/[EntitySetName(ID)]  -  HTTP/1.1
+            </div>
+            <ul>
+                <li>
+                    <b>EntitySetName:</b> Este nombre No es el nombre de la entidad, Dynamics CRM le asigna un nombre en plural al nombre de la entidad. Este nombre está definido en la metadata de la entidad y para
+                    visualizarlo es necesario utilizar una herramienta de terceros explicada en el punto <a href="#XrmToolBox">1.9 - Xrm Tool Box.</a>
+                </li>
+                <li>
+                    <b>ID: </b> Este es el identificador del registro que se quiere consultar (GUID).
+                </li>
+            </ul>
+            <p>
+                Cuando la petición es por algúna petición HTTP desde un lenguaje de desarrollo es necesario agregar las siguientes cabeceras HTTP:
+            </p>
+            <ul>
+                <li>Accept: application/json</li>
+                <li>OData-MaxVersion: 4.0</li>
+                <li>OData-Version: 4.0</li>
+            </ul>
+            <p>
+                Para ver más información relacionada con la eliminación de un registro en la Web Api, vea la siguiente referencia:
+            </p>
+            <p>
+                <b>Referencia: </b><a href="https://msdn.microsoft.com/es-es/library/mt607664.aspx" target="_blank">Actualizar y eliminar entidades mediante la API web</a> <br />
+            </p>
+
+
+
+
+
+            <!-- 1.9 - Herramienta Xrm Tool Box -->
+            <h3 id="XrmToolBox" class="titulo-subtema">1.9 - Herramienta XrmToolBox<a href="#Temario"><i class='fa fa-angle-double-up boton-temario'></i></a></h3>
+            <p class="parrafo-contenido">
+                Esta herramienta más que una sola herramienta, es una caja de herramientas de apoyo en desarrollo de aplicaciones con Dynamics 365:
+            </p>
+            <p class="titulo-parrafo-contenido">
+                Entendiendo el XrmToolBox
+            </p>
+            <p>
+                Las actividades que podemos realizar de forma general con el Xrm Tool Box son:
+            </p>
+            <ul>
+                <li>Conectarnos a una organización de Dynamics 365 Online u On-premises</li>
+                <li>Autenticarse con una cuenta de Office 365 o de Active Directory</li>
+                <li>Guardar conexiones para utilizarlas posteriormente</li>
+                <li>Descargar nuevos plugins(Herramientas) desde el Plugin Store <b>plugin Store</b></li>
+                <li>Uso de herramientas especializadas para una actividad en concreto</li>
+            </ul>
+            <p>
+                Para descargar esta herramienta e información adicional acerca del XrmToolBox y sus plugins, vea la siguiente referencia:
+            </p>
+            <p>
+                <b>Referencia: <a href="https://www.xrmtoolbox.com/" target="_blank">XrmToolBox</a></b>
+            </p>
+
+            <p>En esta sección mencionaremos las herramientas del XrmToolBox que usaremos y mencionaremos algunas otras utilizadas muy comunmente en el desarrollo de aplicaciones para Dynamics 365:</p>
+
+            <p class="titulo-parrafo-contenido">
+                Metadata Browser
+            </p>
+            <p>
+                Esta herramienta nos permite conocer de una forma fácil toda la metadata de las entidades de Dynamics 365.
+            </p>
+            <p class="titulo-list">
+                ¿Que podemos hacer?
+            </p>
+            <ul>
+                <li>Ver la metdadata de una entidad o entidades</li>
+                <li>Ver la metadata de cada atributo de una entidad o entidades</li>
+                <li>Ver la metadata de cada relación de una entidad o entidades</li>
+                <li>Seleccionar las columnas que deseamos ver en el listado de metadata</li>
+            </ul>
+
+            <p class="titulo-parrafo-contenido">
+                Web Resource Manager
+            </p>
+            <p>
+                Esta herramienta nos permite llevar la administración de todos los Web Resources que se encuentran registrados en Dynamics 365 o especificamente en una solución.
+               
+            </p>
+            <p class="titulo-list">
+                ¿Que podemos hacer?
+            </p>
+            <ul>
+                <li>Ver un listado de Web Resources.</li>
+                <li>Ver el contenido de un Web Resource.</li>
+                <li>Crear un nuevo Web Resource desde cero.</li>
+                <li>Seleccionar un archivo para cargarlo a Dynamics 365 como web resource.</li>
+                <li>Editar un Web Reource existente.</li>
+                <li>Eliminar un Web Resource.</li>
+                <li>Vista de árbol para ordenar los Web Resource en carpetas.</li>
+                <li>Publicar los cambios a Dynamics 365.</li>
+            </ul>
+
+            <p class="titulo-parrafo-contenido">
+                Otras herramientas
+            </p>
+            <p>
+                A continuación se mencionan otras herramientas que son muy comunmente utilizadas, sin embargo no son el total de herramientas que contiene el <b>XrmToolBox</b>.
+            </p>
+            <ul>
+                <li><b>SiteMap Editor:</b> Permite administrar las opciones de navegación general del sitio por medío del menú principal.</li>
+                <li><b>Plugin Registration: </b> Esta es una versión similar a la que viene en el SDk, pero con menos funcionalidad.</li>
+                <li><b>Script Finder: </b> Permite ver de una forma rápida, todos los scripts que están asociados a una entidad.</li>
+                <li><b>View Designer: </b> Permite ver o editar las vistas que están definidas en una entidad de una forma rápida.</li>
+                <li><b>Fetch XML Builder:</b> Ayuda a crear o deitar un Fetch XML por medio de una interfaz gráfica y validar los resultados por medio de la ejecución de ese Fetch XML.</li>
+            </ul>
+
+
+
+
+
+            <!-- 1.10 - Práctica -->
+            <h3 id="PracticaSDKCRM" class="titulo-subtema">1.10 - Práctica<a href="#Temario"><i class='fa fa-angle-double-up boton-temario'></i></a></h3>
+            <p class="parrafo-contenido">
+                Para practicar los ejercicios anteriores deberemos de crear una aplicación <b>CRUD</b> para <b>Cuentas</b> pero ahora utilizando la <b>Wen Api</b> de Dynamics 365.
+            </p>
+            <p class="parrafo-contenido">
+                Se recomienda copiar el código HTML de las páginas anteriores y adaptarlo para Cuentas.
+            </p>
+
+            <p class="titulo-parrafo-contenido">
+                Actividades
+            </p>
+            <p class="parrafo-contenido">
+                Para completar esta práctica se deben terminar las siguientes actividades:
+            </p>
+            <ul>
+                <li>Crear una carpeta llamada <b>Cuentas</b> dentro de la carpeta <b>WebResources</b> del proyecto <b>Web</b>.</li>
+                <li>
+                    Crear las páginas:
+                    <ol>
+                        <li>ListaCuentas.html</li>
+                        <li>CrearCuenta.html</li>
+                        <li>EditarCuenta.html</li>
+                    </ol>
+                </li>
+                <li>
+                    Crear los métodos en la librería <b>crm.contexto.udem.js</b>:
+                    <ol>
+                        <li>ObtenerCuentas</li>
+                        <li>ObtenerCuentaPorID</li>
+                        <li>CrearCuentaCRM</li>
+                        <li>ActualizarCuentaCRM</li>
+                        <li>EliminarCuentaCRM</li>
+                    </ol>
+                </li>
+                <li>Actualizar la navegación para estas páginas</li>
+            </ul>
+
+
+
+
+
+
+
+
+
+
+            <!-- 1.11 - Complementos y otras acciones -->
+            <h3 id="OtrasAccionesCRM" class="titulo-subtema">1.11 - Complementos y otras acciones<a href="#Temario"><i class='fa fa-angle-double-up boton-temario'></i></a></h3>
+            <p class="parrafo-contenido">
+                Las formas de interacción con Dynamics 365 presentadas en este curso no representan la totalidad de operaciones distintas que se pueden llevar a cabo,
+                existen múltiples formas de realizar acciones por medio de la Web Api y cada una ayuda de forma distinta a resolver una necesidad para Dynamics 365.
+            </p>
+            <p class="parrafo-contenido">
+                La intención de esta sección es dejar documentación de referencia a muchas otras formas de usar la Web Api de Dynamics CRM.
+            </p>
+            <p class="titulo-parrafo-contenido">
+                Referencias
+            </p>
+            <p>
+                <span class="titulo-referencia">
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                    Información adicional relacionada a la Web Api:
+                </span>
+                <br />                
+                <a class="link-referencia" href="https://msdn.microsoft.com/es-es/library/gg334391.aspx" target="_blank">
+                    Componer solicitudes HTTP y administrar errores
+                </a>
+                <br />
+                <a class="link-referencia" href="https://msdn.microsoft.com/es-es/library/mt607875.aspx" target="_blank">
+                    Asociar y anular la asociación de entidades mediante la API web
+                </a>
+                <br />
+                <a class="link-referencia" href="https://msdn.microsoft.com/es-es/library/gg309638.aspx" target="_blank">
+                    Usar funciones de la API web
+                </a>
+                <br />
+                <a class="link-referencia" href="https://msdn.microsoft.com/es-es/library/mt607600.aspx" target="_blank">
+                    Usar acciones de la API web
+                </a>
+                <br />
+                <a class="link-referencia" href="https://msdn.microsoft.com/es-es/library/mt607719.aspx" target="_blank">
+                    Ejecute las operaciones por lotes mediante API web
+                </a>
+                <br />
+                <a class="link-referencia" href="https://msdn.microsoft.com/es-es/library/mt607702.aspx" target="_blank">
+                    Suplantar a otro usuario utilizando la API web
+                </a>
+                <br />
+                <a class="link-referencia" href="https://msdn.microsoft.com/es-es/library/mt607711.aspx" target="_blank">
+                    Realizar operaciones condicionales mediante la API web
+                </a>
+            </p>
+            <p>
+                <span class="titulo-referencia">
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                    Información adicional relacionada a los Web Resources:
+                </span>
+                <br />
+                <a class="link-referencia" href="https://msdn.microsoft.com/es-es/library/gg309473.aspx" target="_blank">
+                    Recursos web para Microsoft Dynamics 365
+                </a>
+            </p>
+            <p>
+                <span class="titulo-referencia">
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                    Desarrollo con Javascript y la Web Api:
+                </span>
+                <br />
+                <a class="link-referencia" href="https://msdn.microsoft.com/es-mx/library/hh771584.aspx" target="_blank">
+                    Uso de JavaScript con Microsoft Dynamics 365
+                </a>
+                <br />
+                <a class="link-referencia" href="https://msdn.microsoft.com/es-es/library/gg334279.aspx" target="_blank">
+                    Introducción a la API web de Microsoft Dynamics 365 (JavaScript del lado cliente)
+                </a>
+                <br />
+                <a class="link-referencia" href="https://msdn.microsoft.com/es-es/library/gg309562.aspx" target="_blank">
+                    Bibliotecas de JavaScript para Microsoft Dynamics 365
+                </a>
+            </p>
+            <p>
+                <span class="titulo-referencia">
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                    Desarrollo con C# y la Web Api:
+                </span>
+                <br />
+                <a class="link-referencia" href="https://msdn.microsoft.com/es-es/library/mt770386.aspx" target="_blank">
+                    Iniciar un proyecto de la web API de Dynamics 365 en Visual Studio (C#)
+                </a>
+                <br />
+                <a class="link-referencia" href="https://msdn.microsoft.com/es-es/library/mt779074.aspx" target="_blank">
+                    Ejemplo simple de inicio rápido de la API Web (C#)
+                </a>
+                <br />
+                <a class="link-referencia" href="https://msdn.microsoft.com/es-es/library/mt770381.aspx" target="_blank">
+                    Use la biblioteca de código auxiliar de la API web de Microsoft Dynamics 365 (C#)
+                </a>
+            </p>
+
+
+
+
+            <!-- TEMA 2 - 2. Progamación Javascript de lado del cliente -->
+            <h1 id="Tema2" class="titulo-tema-contenido">2. Progamación Javascript de lado del cliente</h1>
+            <p class="parrafo-contenido">
+                Aprenderemos a acceder a os atributos de un formulario de Dynamics 365 dede un Web Resource y 
+                conoceremos como escribir menejadores de eventos(Event Handlers) en los formularios y atributos de formulario de Dynamics 365.
+            </p>
+            <p>Para más inforacióm acerca de las consideraciones a la hora de escribir código en los formularios de Dynamics 365, vea la siguiente referencia:</p>
+            <p><b>Referencia: </b><a href="https://msdn.microsoft.com/es-es/library/gg328261.aspx" target="_blank">Escriba código para formularios de Microsoft Dynamics 365</a></p>
+
+
+
+
+
+
+            <!-- 2.1 - Tipos de formulario y eventos -->
+            <h3 id="TiposFormularioEventos" class="titulo-subtema">2.1 - Tipos de formulario y eventos <a href="#Temario"><i class='fa fa-angle-double-up boton-temario'></i></a></h3>
+            <p>
+                Podemos condicionar que un cierto código javascript se ejecute en un determinado tipo de formulario y en cierto evento de formulario.
+            </p>
+
+            <p class="titulo-parrafo-contenido">
+                Tipo de formulario
+            </p>
+            <p class="parrafo-contenido">
+                Para obtener el tipo de formulario debemos de usar el siguiente método:
+            </p>
+            <div class="ruta">
+                Xrm.Page.ui.getFormType()
+            </div>
+            <p>
+                Podemos ver una tabla con los tipos de formulario que maneja Dynamics 365, en la siguiente referencia:
+            </p>
+            <p><b>Referencia: </b><a href="https://msdn.microsoft.com/es-mx/library/gg327828.aspx#BKMK_getFormType" target="_blank">Tipos de formulario de Dynamics 365</a></p>
+            
+
+            <p class="titulo-parrafo-contenido">
+                Eventos de formulario y aributos
+            </p>
+            <p class="parrafo-contenido">
+                Para ver como acceder a los eventos de formulario y atibuto vea la referencia al punto <b>1.7 - Eventos de atributo y formulario </b> de la guia de desarrollo del SDK .NET.
+                Existen varios eventos que pueden ser manejados por código javascript en un formulario y mencionaremos algunos a continuación:
+            </p>
+            <ul>
+                <li><b>OnLoad: </b>Este evento sucede a nivel formulario.</li>
+                <li><b>OnSave: </b>Este evento sucede a nivel formulario.</li>
+                <li><b>OnChange: </b>Este evento sucede a nivel atributo de formulario.</li>
+            </ul>
+            <p>
+                En esta lista se mencionan los más comunes, para ver más eventos que maneja Dynamics 365, vea la siguiente referencia:
+            </p>
+            <p><b>Referencia: </b><a href="https://msdn.microsoft.com/es-es/library/gg334701.aspx" target="_blank">Usar formularios y eventos de campo</a></p>
+
+
+
+
+            <!-- 2.2 - Leer y asignar valores de atributos de formulario -->
+            <h3 id="LeerAsignarValorAtributo" class="titulo-subtema">2.2 - Leer y asignar valores de atributos de formulario<a href="#Temario"><i class='fa fa-angle-double-up boton-temario'></i></a></h3>
+            <p>
+                Es posible leer el valor de un atributo de formulario o incluso asignar o cambiar el valor de un atributo a travez de código javascript de formulario o de  Web Resource.
+            </p>
+
+            <p class="titulo-parrafo-contenido">
+                Leer el valor de un atributo
+            </p>
+            <p class="parrafo-contenido">
+                Para leer el valor de un atributo de formulario utilizamos el siguiente método:
+            </p>
+            <div class="ruta">
+                Xrm.Page.getAttribute(arg).getValue()
+            </div>
+            <p>
+                El parámetro <b>arg</b> se refiere al nombre del atributo que en este caso es el nombre de esquema del atributo.
+            </p>
+            <p>
+                Podemos ver una tabla con los tipos de valores que maneja Dynamics 365, en la siguiente referencia:
+            </p>
+            <p><b>Referencia: </b><a href="https://msdn.microsoft.com/es-mx/library/gg334409.aspx#BKMK_Value" target="_blank">Valor de un atributo de formulario</a></p>
+
+            <p class="titulo-parrafo-contenido">
+                Asignar o actualizar el valor de un atributo
+            </p>
+            <p class="parrafo-contenido">
+                Para asignar o actualizar el valor de un atributo de formulario utilizamos el siguiente método:
+            </p>
+            <div class="ruta">
+                Xrm.Page.getAttribute(arg).setValue(value)
+            </div>
+            <p>
+                El parámetro <b>arg</b> se refiere al nombre del atributo que en este caso es el nombre de esquema del atributo y el parámetro <b>value</b> es el valor que se desea asignar al atributo.
+            </p>
+            <div class="alert alert-warning">
+                <b>Nota: </b> Es necesario tener especial cuidado al querer asignar el valor para un atributo de búsqueda ya que requiere de una estructura específica para poder asignarlo. 
+                En la referencia de abajo dirijase al apartado <b>Establezca el valor de atributo de búsqueda</b> para ver un ejemplo de esto.
+
+            </div>
+            <p>
+                Para ver más detalle acerca de como asignar el valor a los atributos, vea la siguinete referencia y dirijase al apartado <b>setValue.</b>
+            </p>
+            <p><b>Referencia: </b><a href="https://msdn.microsoft.com/es-mx/library/gg334409.aspx#BKMK_Value" target="_blank">Valor de un atributo de formulario</a></p>
+
+
+
+
+            <!-- 2.3 - Guardar un formulario desde javascript -->
+            <h3 id="GuardarFormularioJavascript" class="titulo-subtema">2.3 - Guardar un formulario desde javascript<a href="#Temario"><i class='fa fa-angle-double-up boton-temario'></i></a></h3>
+            <p>
+                En esta seccion veremos como ejecutar el guardado de un formulario desde código javascript de forma síncrona y asiíncrona.
+            </p>
+
+            <p class="titulo-parrafo-contenido">
+                Guardado síncrono
+            </p>
+            <p class="parrafo-contenido">
+                Para guardar el formulario de forma síncrona utilizamos el siguiente método.
+            </p>
+            <div class="ruta">
+                Xrm.Page.data.entity.save( null | "saveandclose" |"saveandnew" )
+            </div>
+            <p>
+                El parámetro que recibe este método se define de la siguiente manera:
+            </p>
+            <ul>
+                <li><b>save(): </b>Si no se incluye ningún parámetro el registro simplemente se guardará. Esto es el equivalente a usar el comando <b>Guardar</b>.</li>
+                <li><b>save("saveandclose"): </b>Esto es el equivalente a usar el comando <b>Guardar y Cerrar</b>.</li>
+                <li><b>save("saveandnew"): </b>Esto es el equivalente a usar el comando <b>Guardar y nuevo</b>.</li>
+            </ul>
+            <p>
+                Para ver más detalle acerca del guardado <b>síncrono</b>, vea la siguinete referencia:
+            </p>
+            <p><b>Referencia: </b><a href="https://msdn.microsoft.com/es-mx/library/gg334720.aspx#BKMK_save" target="_blank">Guardar síncronamente un formulario.</a></p>
+            <p class="titulo-parrafo-contenido">
+                Guardado asíncrono
+            </p>
+            <p class="parrafo-contenido">
+                Para guardar el formulario de forma asíncrona utilizamos el siguiente método.
+            </p>
+            <div class="ruta">
+                Xrm.Page.data.save(saveOptions).then(successCallback, errorCallback)
+            </div>
+            <p>
+                Veremos a detalle cada uno de los parámetros:
+            </p>
+            <ul>
+                <li><b>saveOptions: </b>Con Actualización 1 de Microsoft Dynamics CRM Online 2015 o posterior, el objeto pasado puede indicar si se usan los mensajes Book o Reschedule en lugar de los mensajes Create o Update..</li>
+                <li><b>successCallback: </b>Esta función se ejecuta cuando la operación es correcta. No devuelve ningún parámetro..</li>
+                <li>
+                    <b>errorCallback: </b>Esta función se ejecuta cuando la operación tiene error. <br />
+                    Se devolverá un objeto como parámetro con  las siguientes propiedades:
+                    <ul>
+                        <li><b>errorCode: Number.</b> Código de error.</li>
+                        <li><b>message: String.</b> Mensaje de error localizado.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>
+                Para ver más detalle acerca del guardado <b>asíncrono</b>, vea la siguiente referencia:
+            </p>
+            <p><b>Referencia: </b><a href="https://msdn.microsoft.com/es-mx/library/dn481607.aspx#BKMK_dataSave" target="_blank">Guardar asíncronamente un formulario.</a></p>
+            <p class="titulo-parrafo-contenido">
+                Obtener el tipo de guardado de un formulario
+            </p>
+            <p>
+                Es posible obtener el tipo de guardado de un formulario desde el contexto de ejecución de los formularios de Dynamics 365.
+            </p>
+            <p>
+                Para ver más detalle acerca de los tipos de guardado, vea la siguiente referencia:
+            </p>
+            <p><b>Referencia: </b><a href="https://msdn.microsoft.com/es-mx/library/gg509060.aspx#BKMK_GetSaveMode" target="_blank">Tipos de evento de guardado.</a></p>
+
+
+            <!-- 2.4 - Pasar valores de formulario a un Web Resource -->
+            <h3 id="PasarValoresFormulario" class="titulo-subtema">2.4 - Pasar valores de formulario a un Web Resource<a href="#Temario"><i class='fa fa-angle-double-up boton-temario'></i></a></h3>
+            <p>
+                En esta seccion veremos como pasar valores de los atributos de un formulario a un Web Resource desde código javascript.
+            </p>
+
+            <p class="titulo-parrafo-contenido">
+                Evento OnChange
+            </p>
+            <p class="parrafo-contenido">
+                Para ejecutar código personalizado en un evento de Dynamics 365 es necesario crear los controladores de eventos en un archivo de recursos web (javascript) y cargalo en el formulario.
+                A continuación describiremos los pasos para asignar un manejador de evento a un evento de atributo:
+            </p>
+            <ol>
+                <li>Crear un archivo javascript que contenga los métodos controladores de eventos(EventHandlers).</li>
+                <li>Crear los métodos que serán asignados a un evento.</li>
+                <li>Abrir la edición de formulario de Dynamics 365.</li>
+                <li>Dar doble clic sobre el atributo que deseamos asignar el manejador de evento a su evento OnChange().</li>
+                <li>Ir a la pestaña <b>Eventos</b> y agregar el archivo de controladores de eventos en la sección <b>Biblioteca de formularios</b>. </li>
+                <li>En la sección Controladores de eventos verificar que esté seleccionado el atributo que deseamos en la lista desplegable: <b>Control</b>.</li>
+                <li>En la lista desplegable <b>Evento</b> seleccionamos el evento AlCambiar</li>
+                <li>Damos clic al botón Agregar.</li>
+                <li>En la pestaña <b>Detales</b> en la lista desplegable <b>Biblioteca</b>, seleccionamos el archivo que contiene los controladores de eventos.</li>
+                <li>En la caja de texto <b>Funcion</b> escribimos el nombre del método que se ejecutará cuando el atributo cambie.</li>
+                <li>Si deseamos pasar el contexto de ejecución seleccionamos la casilla de verificación: <b>Pasar el contexto de ejecución como primer parámetro</b>.</li>
+                <li>Dar clic en <b>Aceptar</b> hasta llegar a la edición de formulario.</li>
+                <li>Dar clic en <b>Guardar</b>.</li>
+                <li>Dar clic en <b>Publicar</b>.</li>
+            </ol>
+            <p>
+                Si desea saber más acerca del <b>Contexto de ejecución</b>, vea la siguiente referencia:
+            </p>
+            <p><b>Referencia: </b><a href="https://msdn.microsoft.com/es-es/library/gg328130.aspx" target="_blank">Contexto de ejecución (referencia del lado del cliente)</a></p>
+            <p class="titulo-parrafo-contenido">
+                Acceder al contenido de un iFrame
+            </p>
+            <p class="parrafo-contenido">
+                En Dynamics 365 podemos acceder al contenido de un Web Resource por código javascript tratandolo como un <b>iFrame</b>.
+            </p>
+            <p>
+                Hay dos formas de obtener un iFrame o Web Resource desde un formulario de Dynamics 365.
+            </p>
+            <ol class="lista-codigo">
+                <li>
+                    Por medio de <b>Xrm.Page.getControl("attrName")</b>:
+                    <div class="ruta-steps">Xrm.Page.getControl("attrName").getObject().contentWindow.window</div>
+                </li>
+                <li>
+                    Por medio de <b>Xrm.Page.ui.controls.get('attrName')</b>:
+                    <div class="ruta-steps">Xrm.Page.ui.controls.get('attrName').getObject().contentWindow.window</div>
+                </li>
+            </ol>
+            <p>
+                Donde el parámetro <b>attrName</b> es el nombre de esquema del atributo.
+            </p>
+
+
+            <!-- 2.5 - Práctica -->
+            <h3 id="PracticaEventos" class="titulo-subtema">2.5 - Práctica<a href="#Temario"><i class='fa fa-angle-double-up boton-temario'></i></a></h3>
+            <p class="parrafo-contenido">
+                Para practicar los ejercicios anteriores deberemos de crear un controlador de evento nuevo.
+            </p>
+
+            <p class="titulo-parrafo-contenido">
+                Actividades
+            </p>
+            <p class="parrafo-contenido">
+                Para completar esta práctica se deben terminar las siguientes actividades:
+            </p>
+            <ul>
+                <li>Crear un nuevo método llamado <b>PhoneChange</b> en el archivo <b>contact.form.js</b> y recibirá como parámetro el contexto de ejecución de Dynamics 365.</li>
+                <li>Este método deberá pasar el valor del campo Teléfono del trabajo al Web Resource cuando su valor cambie.</li>
+                <li>Exponer un método en el Web Resource llamado setPhone que recibirá como parámetro el valor del campo <b>Teléfono del trabajo</b>.</li>
+                <li>Asignar el controlador de evento <b>PhoneChange</b> al evento <b>AlCambiar</b> del atributo <b>Teléfono del trabajo</b>.</li>
+                <li>Guardar y publicar los cambios.</li>
+            </ul>
+
+
+            <!-- 2.6 - Complementos -->
+            <h3 id="Complementos" class="titulo-subtema">2.6 - Complementos<a href="#Temario"><i class='fa fa-angle-double-up boton-temario'></i></a></h3>
+            <p class="parrafo-contenido">
+                Las formas de interacción con Dynamics 365 presentadas en este curso no representan la totalidad de operaciones distintas que se pueden llevar a cabo,
+                existen múltiples formas de realizar acciones por medio del código de cliente y cada una ayuda de forma distinta a resolver una necesidad para Dynamics 365.
+            </p>
+            <p class="parrafo-contenido">
+                La intención de esta sección es dejar documentación de referencia a muchas otras formas de usar el código de cliente de Dynamics CRM.
+            </p>
+            <p class="titulo-parrafo-contenido">
+                Referencias
+            </p>
+            
+            <p>
+                <span class="titulo-referencia">
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                    Información relacionada al desarrollo del lado del cliente
+                </span>
+                <br />
+                <a class="link-referencia" href="https://msdn.microsoft.com/es-mx/library/hh771584.aspx" target="_blank">
+                    Uso de JavaScript con Microsoft Dynamics 365
+                </a>
+                <br />
+                <a class="link-referencia" href="https://msdn.microsoft.com/es-es/library/gg328255.aspx" target="_blank">
+                    Referencia de programación del lado del cliente
+                </a>
+                <br />
+                <a class="link-referencia" href="https://msdn.microsoft.com/es-es/library/gg328261.aspx" target="_blank">
+                    Escriba código para formularios de Microsoft Dynamics 365
+                </a>
+                <br />
+                <a class="link-referencia" href="https://msdn.microsoft.com/es-es/library/gg328483.aspx" target="_blank">
+                    Abrir formularios, vistas, diálogos e informes con una dirección URL
+                </a>
+            </p>
+            <p>
+                <span class="titulo-referencia">
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                    Modelo Xrm.Page
+                </span>
+                <br />
+                <a class="link-referencia" href="https://msdn.microsoft.com/es-es/library/gg328474.aspx" target="_blank">
+                    Use el modelo de objeto Xrm.Page
+                </a>
+                <br />
+                <a class="link-referencia" href="https://msdn.microsoft.com/es-mx/library/gg334511.aspx" target="_blank">
+                    Contexto del lado del cliente (referencia del lado del cliente)
+                </a>
+                <br />
+                <a class="link-referencia" href="https://msdn.microsoft.com/es-mx/library/dn481607.aspx" target="_blank">
+                    Xrm.Page.data (referencia del lado del cliente)
+                </a>
+                <br />
+                <a class="link-referencia" href="https://msdn.microsoft.com/es-es/library/gg334720.aspx" target="_blank">
+                    Xrm.Page.data.entity (referencia del lado del cliente)
+                </a>
+                <br />
+                <a class="link-referencia" href="https://msdn.microsoft.com/es-es/library/gg334409.aspx" target="_blank">
+                    Atributo Xrm.Page.data.entity (referencia de cliente)
+                </a>
+                <br />
+                <a class="link-referencia" href="https://msdn.microsoft.com/es-mx/library/gg327828.aspx" target="_blank">
+                    Xrm.Page.ui (referencia del lado del cliente)
+                </a>
+            </p>
+            <p>
+                <span class="titulo-referencia">
+                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                    Información relacionada al guardado de datos.
+                </span>
+                <br />
+                <a class="link-referencia" href="https://msdn.microsoft.com/es-es/library/gg509060.aspx" target="_blank">
+                    Guardar argumentos de evento (referencia del lado del cliente)
+                </a>               
+            </p>
+        </form>
+    </div>
+    <script src="_libs/jquery.3.2.1.min.js"></script>
+    <script src="_libs/bootstrap.min.js"></script>
+</body>
+</html>

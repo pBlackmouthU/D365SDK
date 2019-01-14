@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="SharedProjectFile_SccProperties">
+    <SharedProjectFile_ProjectGuid>{ad0483b1-a3b2-49e0-863d-95c10706d777}</SharedProjectFile_ProjectGuid>
+    <SharedProjectFile_SccProjectName>SAK</SharedProjectFile_SccProjectName>
+    <SharedProjectFile_SccAuxPath>SAK</SharedProjectFile_SccAuxPath>
+    <SharedProjectFile_SccLocalPath>SAK</SharedProjectFile_SccLocalPath>
+    <SharedProjectFile_SccProvider>SAK</SharedProjectFile_SccProvider>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>24275cf3-3a23-4baf-9b1a-bb0c6e7cb506</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Librerias.Crm.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Base\EntidadCrm.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Base\ServicioBaseCRM.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entidades\Contacto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entidades\Cuenta.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensiones\StringExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IEntidadCrm.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Servicios\ContactoServicio.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Servicios\CuentaServicio.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Soporte\Metadata.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TiposDato\CrmLookup.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TiposDato\CrmPicklist.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TiposDato\Respuesta.cs" />
+  </ItemGroup>
+</Project>
