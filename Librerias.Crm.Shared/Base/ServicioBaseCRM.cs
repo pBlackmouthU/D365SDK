@@ -30,12 +30,12 @@ namespace Librerias.Crm
             }
             catch (SoapException ex) // Agregar referencia System.Web.Services
             {
-
+                throw ex;
             }
             catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
 
             return _id;
@@ -53,12 +53,12 @@ namespace Librerias.Crm
             }
             catch (SoapException ex) // Agregar referencia System.Web.Services
             {
-
+                throw ex;
             }
             catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
 
             return _id;
