@@ -61,7 +61,7 @@
             top: -1000px;
         }
     </style>
-    <script src="../../Scripts/jquery-3.2.1.min.js"></script>
+    <script src="../../Scripts/jquery-3.3.1.min.js"></script>
     <script src="../../Scripts/bootstrap.min.js"></script>
     <script src="../../Scripts/jquery-ui.js"></script>
     <script>   

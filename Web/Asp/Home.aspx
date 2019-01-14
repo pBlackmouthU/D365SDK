@@ -1522,7 +1522,7 @@
 
         </form>
     </div>
-    <script src="../Scripts/jquery-3.2.1.min.js"></script>
+    <script src="../Scripts/jquery-3.3.1.min.js"></script>
     <script src="../Scripts/bootstrap.js"></script>
     <script>
 </script>
