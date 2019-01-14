@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Librerias.Crm.Conexion", "L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{60106B51-E152-482A-9FB1-80776D078DB2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clientes", "Clientes", "{B09DEC7D-D964-48E6-9B88-30D686A12B6E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{C06690CC-10E6-4A06-A1CB-85CE09E59D7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.JQuery", "Web.JQuery\Web.JQuery.csproj", "{EC1BEE79-28D7-437C-8481-66C0298A7B01}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Librerias.Crm.Shared\Librerias.Crm.Shared.projitems*{24275cf3-3a23-4baf-9b1a-bb0c6e7cb506}*SharedItemsImports = 13
@@ -33,9 +39,17 @@ Global
 		{60106B51-E152-482A-9FB1-80776D078DB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60106B51-E152-482A-9FB1-80776D078DB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60106B51-E152-482A-9FB1-80776D078DB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC1BEE79-28D7-437C-8481-66C0298A7B01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC1BEE79-28D7-437C-8481-66C0298A7B01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC1BEE79-28D7-437C-8481-66C0298A7B01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC1BEE79-28D7-437C-8481-66C0298A7B01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{60106B51-E152-482A-9FB1-80776D078DB2} = {B09DEC7D-D964-48E6-9B88-30D686A12B6E}
+		{EC1BEE79-28D7-437C-8481-66C0298A7B01} = {B09DEC7D-D964-48E6-9B88-30D686A12B6E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {18460D28-D8D0-470D-AB21-AFE3498464AA}
