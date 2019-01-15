@@ -50,7 +50,7 @@ namespace Consola.ConexionCRM
 
         static void CrmConnect()
         {
-            CrmServerLoginControl
+            
         }
 
         
