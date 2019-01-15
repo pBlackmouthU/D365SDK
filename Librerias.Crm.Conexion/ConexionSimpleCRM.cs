@@ -12,6 +12,7 @@ namespace Librerias.Crm.Conexion
     {
         private CrmServiceClient _crmClient;
         private IOrganizationService _orgService;
+        
 
 
         public ConexionSimpleCRM(string connectionStringName)
@@ -24,6 +25,11 @@ namespace Librerias.Crm.Conexion
         public IOrganizationService ObtenerServicioConexion()
         {
             return _orgService;
+        }
+
+        public CrmServiceClient ObtenerCrmServiceClient()
+        {
+            return _crmClient;
         }
 
         #region IDisposable Support
