@@ -20,7 +20,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Base\ServicioBaseCRM.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entidades\Contacto.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entidades\Cuenta.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Extensiones\StringExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IEntidadCrm.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Servicios\ContactoServicio.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Servicios\CuentaServicio.cs" />

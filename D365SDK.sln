@@ -21,10 +21,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Consolas", "Consolas", "{9A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consola.ConexionCRM", "Consola.ConexionCRM\Consola.ConexionCRM.csproj", "{5FD58F5B-2083-423C-AD0A-485DA2DD6B80}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Librerias.Common.IO", "Librerias.Common.IO\Librerias.Common.IO.csproj", "{94100DDC-13C0-484E-83A3-FCB0D1F5CE20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Librerias.Common", "Librerias.Common\Librerias.Common.csproj", "{51AED4E9-554F-465A-9F57-A1AD1B286332}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Librerias.Common.Shared", "Librerias.Common.Shared\Librerias.Common.Shared.shproj", "{E5E0D313-8BFC-4829-B447-915984FAF0F7}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Librerias.Crm.Shared\Librerias.Crm.Shared.projitems*{24275cf3-3a23-4baf-9b1a-bb0c6e7cb506}*SharedItemsImports = 13
+		Librerias.Common.Shared\Librerias.Common.Shared.projitems*{51aed4e9-554f-465a-9f57-a1ad1b286332}*SharedItemsImports = 4
+		Librerias.Common.Shared\Librerias.Common.Shared.projitems*{60124e28-cb46-4aea-8d8a-96ee470657dd}*SharedItemsImports = 4
 		Librerias.Crm.Shared\Librerias.Crm.Shared.projitems*{60124e28-cb46-4aea-8d8a-96ee470657dd}*SharedItemsImports = 4
+		Librerias.Common.Shared\Librerias.Common.Shared.projitems*{e5e0d313-8bfc-4829-b447-915984faf0f7}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +60,14 @@ Global
 		{5FD58F5B-2083-423C-AD0A-485DA2DD6B80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FD58F5B-2083-423C-AD0A-485DA2DD6B80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FD58F5B-2083-423C-AD0A-485DA2DD6B80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94100DDC-13C0-484E-83A3-FCB0D1F5CE20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94100DDC-13C0-484E-83A3-FCB0D1F5CE20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94100DDC-13C0-484E-83A3-FCB0D1F5CE20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94100DDC-13C0-484E-83A3-FCB0D1F5CE20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51AED4E9-554F-465A-9F57-A1AD1B286332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51AED4E9-554F-465A-9F57-A1AD1B286332}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51AED4E9-554F-465A-9F57-A1AD1B286332}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51AED4E9-554F-465A-9F57-A1AD1B286332}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

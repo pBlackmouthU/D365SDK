@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace Librerias.Crm
+namespace Librerias.Common
 {
     public static class StringExtensions
     {
@@ -26,6 +24,11 @@ namespace Librerias.Crm
         public static bool IsNotNullOrEmpty(this string value)
         {
             return !IsNullOrEmpty(value);
+        }
+
+        public static string FormatWith(this string value, params object[] args)
+        {
+            return string.Format(value, args);
         }
     }
 }

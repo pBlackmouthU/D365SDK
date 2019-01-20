@@ -6,7 +6,7 @@
 <head runat="server">
     <title></title>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="Content/Application.css" rel="stylesheet" />
+    <link href="Content/AppStyles/Home.css" rel="stylesheet" />
 </head>
 <body>
     <div class="container">

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xrm.Sdk;
+using Librerias.Common;
 
 namespace Librerias.Crm
 {
