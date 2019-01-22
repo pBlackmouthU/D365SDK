@@ -31,7 +31,6 @@ Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Librerias.Crm.Shared\Librerias.Crm.Shared.projitems*{24275cf3-3a23-4baf-9b1a-bb0c6e7cb506}*SharedItemsImports = 13
 		Librerias.Common.Shared\Librerias.Common.Shared.projitems*{51aed4e9-554f-465a-9f57-a1ad1b286332}*SharedItemsImports = 4
-		Librerias.Common.Shared\Librerias.Common.Shared.projitems*{60124e28-cb46-4aea-8d8a-96ee470657dd}*SharedItemsImports = 4
 		Librerias.Crm.Shared\Librerias.Crm.Shared.projitems*{60124e28-cb46-4aea-8d8a-96ee470657dd}*SharedItemsImports = 4
 		Librerias.Common.Shared\Librerias.Common.Shared.projitems*{e5e0d313-8bfc-4829-b447-915984faf0f7}*SharedItemsImports = 13
 	EndGlobalSection

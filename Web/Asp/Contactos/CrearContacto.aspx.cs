@@ -49,7 +49,7 @@ namespace Web.Asp
             List<Cuenta> list = null;
             try
             {
-                using (ConexionSimpleCRM cnn = new ConexionSimpleCRM(Constantes.ConnectionStringName))
+                using (SimpleConnection365 cnn = new SimpleConnection365(Constantes.ConnectionStringName))
                 {
                     using(CuentaServicio cuentaSvc = new CuentaServicio(cnn.ObtenerServicioConexion()))
                     {
@@ -72,7 +72,7 @@ namespace Web.Asp
             List<CrmPicklist> list = null;
             try
             {
-                using (ConexionSimpleCRM cnn = new ConexionSimpleCRM(Constantes.ConnectionStringName))
+                using (SimpleConnection365 cnn = new SimpleConnection365(Constantes.ConnectionStringName))
                 {
                     using (Metadata metadataSvc = new Metadata(cnn.ObtenerServicioConexion()))
                     {
@@ -95,7 +95,7 @@ namespace Web.Asp
             Respuesta resp = new Respuesta();
             try
             {
-                using (ConexionSimpleCRM cnn = new ConexionSimpleCRM(Constantes.ConnectionStringName))
+                using (SimpleConnection365 cnn = new SimpleConnection365(Constantes.ConnectionStringName))
                 {
                     using (ContactoServicio contactoSvc = new ContactoServicio(cnn.ObtenerServicioConexion()))
                     {

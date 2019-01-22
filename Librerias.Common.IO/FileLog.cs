@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Librerias.Common.IO
 {
-    public class FileLog
+    public class FileLog: IDisposable
     {
 
         string _filePath = null;
@@ -34,26 +34,60 @@ namespace Librerias.Common.IO
             }
         }
 
-        public void WriteError(string Message)
+        
+
+        public void WriteError(string Message, string ErrorID = null)
         {
-            using(StreamWriter sw = new StreamWriter("{0}\\log.txt".FormatWith(_directory), true ,Encoding.Default))
+            try
             {
-                sw.WriteLine("{0}----------------------------------------------------------------------------------------------------------------------------".FormatWith(DateTime.Now));
-                sw.WriteLine("\t{0}".FormatWith(Message));
-                sw.WriteLine("\r\n");
+                using (StreamWriter sw = new StreamWriter("{0}\\log.txt".FormatWith(_directory), true, Encoding.Default))
+                {
+                    sw.WriteLine("{0}--------------------------------------------------------------------------------------------------------------------------------------------".FormatWith(DateTime.Now));
+                    if (ErrorID != null)
+                        sw.WriteLine("\tErrorID: {0}".FormatWith(ErrorID));
+
+                    sw.WriteLine("\t{0}".FormatWith(Message));
+                    sw.WriteLine("\r\n");
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: Event Viewer Log
             }
         }
 
         private void GetAssemplyPath()
         {
             // _filePath = AppDomain.CurrentDomain.BaseDirectory;
-
-            _filePath = Assembly.GetExecutingAssembly().CodeBase;
-            _directory = "{0}\\Logs".FormatWith(System.IO.Path.GetDirectoryName(_filePath)).Replace("file:\\","");
-
-            if (!Directory.Exists(_directory))
+            try
             {
-                Directory.CreateDirectory(_directory);
+
+                _filePath = Assembly.GetExecutingAssembly().CodeBase;
+                _directory = "{0}\\Logs".FormatWith(System.IO.Path.GetDirectoryName(_filePath)).Replace("file:\\", "");
+
+                if (!Directory.Exists(_directory))
+                {
+                    Directory.CreateDirectory(_directory);
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: Event Viewer Log
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                _filePath = null;
+                _directory = null;
             }
         }
     }

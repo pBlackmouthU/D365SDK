@@ -35,7 +35,7 @@ namespace Consola.ConexionCRM
 
         static void ConexionSimple()
         {
-            using (ConexionSimpleCRM cnn = new ConexionSimpleCRM(connectionStringName))
+            using (SimpleConnection365 cnn = new SimpleConnection365(connectionStringName))
             {
                 if (cnn != null)
                 {

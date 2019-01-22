@@ -23,7 +23,7 @@ namespace Web.Asp
         {
             List<Contacto> list = null;
 
-            using (ConexionSimpleCRM cnn = new ConexionSimpleCRM(Constantes.ConnectionStringName))
+            using (SimpleConnection365 cnn = new SimpleConnection365(Constantes.ConnectionStringName))
             {
                 using (ContactoServicio contactSvc = new ContactoServicio(cnn.ObtenerServicioConexion()))
                 {
@@ -39,7 +39,7 @@ namespace Web.Asp
         {
             Respuesta resp = new Respuesta();
 
-            using (ConexionSimpleCRM cnn = new ConexionSimpleCRM(Constantes.ConnectionStringName))
+            using (SimpleConnection365 cnn = new SimpleConnection365(Constantes.ConnectionStringName))
             {
                 using (ContactoServicio contactSvc = new ContactoServicio(cnn.ObtenerServicioConexion()))
                 {

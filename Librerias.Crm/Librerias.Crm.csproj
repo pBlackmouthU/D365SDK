@@ -71,7 +71,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Librerias.Common\Librerias.Common.csproj">
+      <Project>{51aed4e9-554f-465a-9f57-a1ad1b286332}</Project>
+      <Name>Librerias.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="..\Librerias.Crm.Shared\Librerias.Crm.Shared.projitems" Label="Shared" />
-  <Import Project="..\Librerias.Common.Shared\Librerias.Common.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

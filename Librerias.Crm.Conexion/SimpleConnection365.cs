@@ -8,14 +8,14 @@ namespace Librerias.Crm.Conexion
     /// <summary>
     /// Provee una conexión hacia Dynamics CRm
     /// </summary>
-    public class ConexionSimpleCRM :IDisposable
+    public class SimpleConnection365 :IDisposable
     {
         private CrmServiceClient _crmClient;
         private IOrganizationService _orgService;
         
 
 
-        public ConexionSimpleCRM(string connectionStringName)
+        public SimpleConnection365(string connectionStringName)
         {
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             _crmClient = new CrmServiceClient(ConfigurationManager.ConnectionStrings[connectionStringName].ConnectionString);
@@ -52,7 +52,7 @@ namespace Librerias.Crm.Conexion
         }
 
         // TODO: override a finalizer only if Dispose(bool disposing) above has code to free unmanaged resources.
-        ~ConexionSimpleCRM()
+        ~SimpleConnection365()
         {
             // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
             Dispose(false);

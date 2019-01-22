@@ -80,6 +80,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\AppStyles\CommonStyles.css" />
     <Content Include="Content\AppStyles\Home.css" />
     <Content Include="Content\AppStyles\RetrieveMultiple.css" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -145,10 +146,14 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
     <Content Include="Content\v4-shims.css" />
     <Content Include="Content\v4-shims.min.css" />
     <Content Include="Home.aspx" />
+    <Content Include="Html\ToastrSample.html" />
     <Content Include="Pages\1.Common\01_ObtenerListado.aspx" />
+    <Content Include="Pages\1.Common\02_CrearRegistro.aspx" />
     <Content Include="Scripts\AppScripts\RetrieveMultiple.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -172,6 +177,8 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\fontawesome\all.js" />
     <Content Include="Scripts\fontawesome\all.min.js" />
@@ -185,6 +192,8 @@
     <Content Include="Scripts\fontawesome\solid.min.js" />
     <Content Include="Scripts\fontawesome\v4-shims.js" />
     <Content Include="Scripts\fontawesome\v4-shims.min.js" />
+    <Content Include="Scripts\glimpse.js" />
+    <Content Include="Scripts\glimpse.toastr.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -196,6 +205,8 @@
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
@@ -219,8 +230,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\Constantes.cs" />
-    <Compile Include="Common\Request\ListRequest.cs" />
-    <Compile Include="Common\Request\RequestBase.cs" />
+    <Compile Include="Common\CustomWebForm.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\Response\CreateEntityRecordResponse.cs" />
+    <Compile Include="Common\Response\RetrieveEntityRecordResponse.cs" />
+    <Compile Include="Common\Response\RetrieveRecordListResponse.cs" />
+    <Compile Include="Common\Response\Base\ResponseBase.cs" />
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -234,6 +250,13 @@
     </Compile>
     <Compile Include="Pages\1.Common\01_ObtenerListado.aspx.designer.cs">
       <DependentUpon>01_ObtenerListado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\1.Common\02_CrearRegistro.aspx.cs">
+      <DependentUpon>02_CrearRegistro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\1.Common\02_CrearRegistro.aspx.designer.cs">
+      <DependentUpon>02_CrearRegistro.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -268,13 +291,21 @@
       <Project>{94100DDC-13C0-484E-83A3-FCB0D1F5CE20}</Project>
       <Name>Librerias.Common.IO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Librerias.Common\Librerias.Common.csproj">
+      <Project>{51aed4e9-554f-465a-9f57-a1ad1b286332}</Project>
+      <Name>Librerias.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Librerias.Crm.Conexion\Librerias.Crm.Conexion.csproj">
       <Project>{1DC625B2-1E24-4342-9308-472CCEB136C4}</Project>
       <Name>Librerias.Crm.Conexion</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Librerias.Crm\Librerias.Crm.csproj">
+      <Project>{60124E28-CB46-4AEA-8D8A-96EE470657DD}</Project>
+      <Name>Librerias.Crm</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Common\Response\" />
+    <Folder Include="Common\Request\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
