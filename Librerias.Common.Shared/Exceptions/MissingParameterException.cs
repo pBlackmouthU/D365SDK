@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-namespace Librerias.Common.Exceptions
+namespace Librerias.Common
 {
     public class MissingParameterException : Exception
     {
