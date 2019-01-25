@@ -82,6 +82,9 @@
                 <li>
                     <a href="Pages/1.Common/02_CrearRegistro.aspx">Crear registro de cliente potencial</a>
                 </li>
+                <li>
+                    <a href="Pages/1.Common/03_ObtenerRegistro.aspx?id=8BA82838-081E-E911-A970-000D3A170740">Obtener registro de cliente potencial</a>
+                </li>
             </ul>
         </form>
     </div>

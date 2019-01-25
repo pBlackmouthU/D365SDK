@@ -56,6 +56,20 @@ namespace Librerias.Common.IO
             }
         }
 
+        public string RegisterError(string ErrorMessage, string CustomMessage, params object[] Params)
+        {
+            Guid errorID = Guid.NewGuid();
+            WriteError(ErrorMessage, errorID.ToString());
+            string message = CustomMessage.FormatWith(Params).Trim(); ;
+
+            if(!(message.LastIndexOf('.') == (message.Length - 1)))
+            {
+                message = "{0}.".FormatWith(message);
+            }
+
+            return "{1} Proporcione el siguiente código de error al administrador del sistema. ErrorID: {1}".FormatWith(errorID);
+        }
+
         private void GetAssemplyPath()
         {
             // _filePath = AppDomain.CurrentDomain.BaseDirectory;
@@ -89,6 +103,7 @@ namespace Librerias.Common.IO
                 _filePath = null;
                 _directory = null;
             }
+            
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="02_CrearRegistro.aspx.cs" Inherits="Web.JQuery.Pages._1.Common._02_CrearRegistro" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="03_ObtenerRegistro.aspx.cs" Inherits="Web.JQuery.Pages._1.Common._03_ObtenerRegistro" %>
 
 <!DOCTYPE html>
 
@@ -34,7 +34,6 @@
                         <label for="email">Correo electrónico</label>
                         <input type="email" class="form-control" id="email" placeholder="Correo electrónico" />
                     </div>
-                    <button id="CreateButton" type="button" class="btn btn-primary" >Crear Cliente Potencial</button>
             </div>
         </form>
         
@@ -55,25 +54,26 @@
     <script src="../../Scripts/jquery-ui-1.12.1.min.js"></script>
     <script src="../../Scripts/toastr.min.js"></script>
     <script>
+        var lead = null;
         $(function () {
+            var id = getUrlVars()["id"];
             // Al cargarse el DOM se hace la petición para obtener el listado de clientes potenciales.
-            $("#CreateButton").click(function () {
-                var subject = $("#subject").val();
-                var firstname = $("#firstname").val();
-                var lastname = $("#lastname").val();
-                var email = $("#email").val();
-                PageMethods.CreateLead(subject, firstname, lastname, email, CreateLeadSuccess, OnError);
-            });
+            PageMethods.GetLead(id, GetLeadSuccess, OnError);
         });
 
         // Función de callback que retorna el listado de entidades.
-        function CreateLeadSuccess(response) {
+        function GetLeadSuccess(response) {
             console.log("CreateLeadSuccess: ", response);
-            var collection = null;
 
             if (response && response.WasSuccessful) {
-                showToastr("success", "Cliente Potencial creado exitosamente. ");
-                window.location.href ="../../Home.aspx";
+                showToastr("success", "Cliente Potencial obtenido exitosamente. ");
+                lead = CreateJsonEntity(response.Record);
+                console.log("Lead: ", lead);
+                $("#firstname").val(lead.firstname);
+                $("#lastname").val(lead.lastname);
+                $("#subject").val(lead.subject);
+                $("#email").val(lead.emailaddress1);
+
             } else {
                 if (response.ErrorMessage !== null && response.ErrorMessage !== "") {
                     showModal("Error",response.ErrorMessage);
@@ -141,6 +141,21 @@
               "hideMethod": "fadeOut"
             }
             toastr[type](message);
+        }
+
+
+        // Read a page's GET URL variables and return them as an associative array.
+        function getUrlVars()
+        {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for(var i = 0; i < hashes.length; i++)
+            {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
         }
     </script>
 </body>
