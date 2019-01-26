@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Text.RegularExpressions;
 
 namespace Librerias.Common
 {
@@ -30,5 +28,16 @@ namespace Librerias.Common
         {
             return string.Format(value, args);
         }
+
+        public static bool IsValidEmail(this string value)
+        {
+            return Match(value, RegexUtils.EmailRegex);
+        }
+
+        private static bool Match(string value, Regex regex)
+        {
+            return value.IsNotNullOrEmpty() || regex.IsMatch(value);
+        }
+
     }
 }
