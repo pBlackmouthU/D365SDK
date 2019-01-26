@@ -155,6 +155,7 @@
     <Content Include="Pages\1.Common\01_ObtenerListado.aspx" />
     <Content Include="Pages\1.Common\02_CrearRegistro.aspx" />
     <Content Include="Pages\1.Common\03_ObtenerRegistro.aspx" />
+    <Content Include="Pages\1.Common\04_ActualizarRegistro.aspx" />
     <Content Include="Scripts\AppScripts\RetrieveMultiple.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -238,6 +239,7 @@
     <Compile Include="Common\Response\RetrieveEntityRecordResponse.cs" />
     <Compile Include="Common\Response\RetrieveRecordListResponse.cs" />
     <Compile Include="Common\Response\Base\ResponseBase.cs" />
+    <Compile Include="Common\Response\UpdateEntityRecordResponse.cs" />
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -265,6 +267,13 @@
     </Compile>
     <Compile Include="Pages\1.Common\03_ObtenerRegistro.aspx.designer.cs">
       <DependentUpon>03_ObtenerRegistro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\1.Common\04_ActualizarRegistro.aspx.cs">
+      <DependentUpon>04_ActualizarRegistro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\1.Common\04_ActualizarRegistro.aspx.designer.cs">
+      <DependentUpon>04_ActualizarRegistro.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

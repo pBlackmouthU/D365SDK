@@ -67,7 +67,7 @@ namespace Librerias.Common.IO
                 message = "{0}.".FormatWith(message);
             }
 
-            return "{1} Proporcione el siguiente código de error al administrador del sistema. ErrorID: {1}".FormatWith(errorID);
+            return "{0} Proporcione el siguiente código de error al administrador del sistema. ErrorID: {1}".FormatWith(message, errorID);
         }
 
         private void GetAssemplyPath()

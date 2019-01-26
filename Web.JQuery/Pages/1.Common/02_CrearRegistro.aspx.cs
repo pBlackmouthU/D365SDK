@@ -1,5 +1,4 @@
 ﻿using Librerias.Common;
-using Librerias.Common.Exceptions;
 using Librerias.Common.IO;
 using Librerias.Crm.Conexion;
 using Librerias.Crm.Exceptions;

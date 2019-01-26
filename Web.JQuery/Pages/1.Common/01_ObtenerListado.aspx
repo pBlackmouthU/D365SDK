@@ -37,13 +37,15 @@
             </div>
         </div>
     </form>
-
-    <div id="dialog-message" title="Download complete">
-        <p>
-            <i class="fas fa-exclamation-circle" style="float:left; margin:0 7px 50px 0; color: red;"></i>
-            <span id="modalContentText" ></span>
-        </p>
+    <div  style="visibility: hidden;">
+        <div id="dialog-message" title="Download complete">
+            <p>
+                <i class="fas fa-exclamation-circle" style="float:left; margin:0 7px 50px 0; color: red;"></i>
+                <span id="modalContentText" ></span>
+            </p>
+        </div>
     </div>
+    
 
     <script src="../../Scripts/jquery-3.3.1.min.js"></script>
     <script src="../../Scripts/bootstrap.min.js"></script>
@@ -96,7 +98,7 @@
                     var template = $('#leadTableTemplate').html();
                     Mustache.parse(template);   // optional, speeds up future uses
                     var rendered = Mustache.render(template, collection);
-                    //$("#tableLeadsBody").html(rendered);
+                    $("#tableLeadsBody").html(rendered);
                 }
 
             } else {
