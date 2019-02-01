@@ -65,6 +65,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Librerias.Common\Librerias.Common.csproj">
+      <Project>{51AED4E9-554F-465A-9F57-A1AD1B286332}</Project>
+      <Name>Librerias.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Librerias.Crm.Conexion\Librerias.Crm.Conexion.csproj">
       <Project>{1dc625b2-1e24-4342-9308-472cceb136c4}</Project>
       <Name>Librerias.Crm.Conexion</Name>
