@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Librerias.Common", "Libreri
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Librerias.Common.Shared", "Librerias.Common.Shared\Librerias.Common.Shared.shproj", "{E5E0D313-8BFC-4829-B447-915984FAF0F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consola.OrganizationService", "Consola.OrganizationService\Consola.OrganizationService.csproj", "{2C923D79-CB8F-4E83-96D5-2F76C310B5D5}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Librerias.Crm.Shared\Librerias.Crm.Shared.projitems*{24275cf3-3a23-4baf-9b1a-bb0c6e7cb506}*SharedItemsImports = 13
@@ -67,6 +69,10 @@ Global
 		{51AED4E9-554F-465A-9F57-A1AD1B286332}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51AED4E9-554F-465A-9F57-A1AD1B286332}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51AED4E9-554F-465A-9F57-A1AD1B286332}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C923D79-CB8F-4E83-96D5-2F76C310B5D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C923D79-CB8F-4E83-96D5-2F76C310B5D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C923D79-CB8F-4E83-96D5-2F76C310B5D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C923D79-CB8F-4E83-96D5-2F76C310B5D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +81,7 @@ Global
 		{60106B51-E152-482A-9FB1-80776D078DB2} = {B09DEC7D-D964-48E6-9B88-30D686A12B6E}
 		{EC1BEE79-28D7-437C-8481-66C0298A7B01} = {B09DEC7D-D964-48E6-9B88-30D686A12B6E}
 		{5FD58F5B-2083-423C-AD0A-485DA2DD6B80} = {9A00F8F0-2BD6-43AC-898A-80F3C7041143}
+		{2C923D79-CB8F-4E83-96D5-2F76C310B5D5} = {9A00F8F0-2BD6-43AC-898A-80F3C7041143}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {18460D28-D8D0-470D-AB21-AFE3498464AA}
