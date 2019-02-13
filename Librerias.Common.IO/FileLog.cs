@@ -40,13 +40,13 @@ namespace Librerias.Common.IO
         {
             try
             {
-                using (StreamWriter sw = new StreamWriter("{0}\\log.txt".FormatWith(_directory), true, Encoding.Default))
+                using (StreamWriter sw = new StreamWriter("{0}\\log.txt".TextPlacecholders(_directory), true, Encoding.Default))
                 {
-                    sw.WriteLine("{0}--------------------------------------------------------------------------------------------------------------------------------------------".FormatWith(DateTime.Now));
+                    sw.WriteLine("{0}--------------------------------------------------------------------------------------------------------------------------------------------".TextPlacecholders(DateTime.Now));
                     if (ErrorID != null)
-                        sw.WriteLine("\tErrorID: {0}".FormatWith(ErrorID));
+                        sw.WriteLine("\tErrorID: {0}".TextPlacecholders(ErrorID));
 
-                    sw.WriteLine("\t{0}".FormatWith(Message));
+                    sw.WriteLine("\t{0}".TextPlacecholders(Message));
                     sw.WriteLine("\r\n");
                 }
             }
@@ -60,14 +60,14 @@ namespace Librerias.Common.IO
         {
             Guid errorID = Guid.NewGuid();
             WriteError(ErrorMessage, errorID.ToString());
-            string message = CustomMessage.FormatWith(Params).Trim(); ;
+            string message = CustomMessage.TextPlacecholders(Params).Trim(); ;
 
             if(!(message.LastIndexOf('.') == (message.Length - 1)))
             {
-                message = "{0}.".FormatWith(message);
+                message = "{0}.".TextPlacecholders(message);
             }
 
-            return "{0} Proporcione el siguiente código de error al administrador del sistema. ErrorID: {1}".FormatWith(message, errorID);
+            return "{0} Proporcione el siguiente código de error al administrador del sistema. ErrorID: {1}".TextPlacecholders(message, errorID);
         }
 
         private void GetAssemplyPath()
@@ -77,7 +77,7 @@ namespace Librerias.Common.IO
             {
 
                 _filePath = Assembly.GetExecutingAssembly().CodeBase;
-                _directory = "{0}\\Logs".FormatWith(System.IO.Path.GetDirectoryName(_filePath)).Replace("file:\\", "");
+                _directory = "{0}\\Logs".TextPlacecholders(System.IO.Path.GetDirectoryName(_filePath)).Replace("file:\\", "");
 
                 if (!Directory.Exists(_directory))
                 {

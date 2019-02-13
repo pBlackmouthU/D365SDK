@@ -24,7 +24,7 @@ namespace Librerias.Common
             return !IsNullOrEmpty(value);
         }
 
-        public static string FormatWith(this string value, params object[] args)
+        public static string TextPlacecholders(this string value, params object[] args)
         {
             return string.Format(value, args);
         }

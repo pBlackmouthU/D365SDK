@@ -77,13 +77,13 @@ namespace Web.JQuery.Pages._1.Common
                 {
                     Guid errorID = Guid.NewGuid();
                     log.WriteError(osFaultException.Detail.Message, errorID.ToString());
-                    response.ErrorMessage = "No fué posible obtener el listado. Proporcione el siguiente código de error al administrador del sistema. ErrorID: {0}".FormatWith(errorID);
+                    response.ErrorMessage = "No fué posible obtener el listado. Proporcione el siguiente código de error al administrador del sistema. ErrorID: {0}".TextPlacecholders(errorID);
                 }
                 catch (Exception ex)
                 {
                     Guid errorID = Guid.NewGuid();
                     log.WriteError(ex.Message, errorID.ToString());
-                    response.ErrorMessage = "No fué posible obtener el listado. Proporcione el siguiente código de error al administrador del sistema. ErrorID: {0}".FormatWith(errorID);
+                    response.ErrorMessage = "No fué posible obtener el listado. Proporcione el siguiente código de error al administrador del sistema. ErrorID: {0}".TextPlacecholders(errorID);
                 }
             }
 

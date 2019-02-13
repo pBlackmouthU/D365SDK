@@ -12,6 +12,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Exceptions\MissingParameterException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\StringExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\RegexUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\TestClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Extensions\" />

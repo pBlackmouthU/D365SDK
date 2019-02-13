@@ -1,10 +1,14 @@
-﻿using Librerias.Common;
-using Librerias.Crm.Conexion;
+﻿
+//using Librerias.Crm.Conexion;
+using Librerias.Common;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
+using Microsoft.Xrm.Tooling.Connector;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,17 +16,25 @@ namespace Consola.OrganizationService
 {
     public class Program
     {
-        private static SimpleConnection365 cnn = null;
-        private static IOrganizationService servicio = null;
+
+        private static CrmServiceClient _crmClient;
+
+        //private static SimpleConnection365 cnn = null;
+        private static IOrganizationService crmService = null;
         private static Guid? createEntityId = null;
         private static ColumnSet columns = null;
         static void Main(string[] args)
         {
-            cnn = new SimpleConnection365("Dev00");
-            if(cnn != null)
-            {
-                servicio = cnn.ObtenerServicioConexion();
-            }
+            //cnn = new SimpleConnection365("Dev00");
+            //if (cnn != null)
+            //{
+            //    crmService = cnn.ObtenerServicioConexion();
+            //}
+
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            _crmClient = new CrmServiceClient(ConfigurationManager.ConnectionStrings["Dev01"].ConnectionString);
+            crmService = (IOrganizationService)_crmClient.OrganizationWebProxyClient != null ? (IOrganizationService)_crmClient.OrganizationWebProxyClient : (IOrganizationService)_crmClient.OrganizationServiceProxy;
+
 
             columns = new ColumnSet(new string[] { "firstname", "lastname", "emailaddress1", "jobtitle", "companyname" });
 
@@ -87,7 +99,7 @@ namespace Consola.OrganizationService
 
         private static void GetLeads()
         {
-            if(servicio != null)
+            if(crmService != null)
             {
                 Console.Clear();
                 Console.WriteLine("Obteniendo lista de Clientes Potenciales...");
@@ -113,7 +125,7 @@ namespace Consola.OrganizationService
 
         private static void GetSampleLeads()
         {
-            if (servicio != null)
+            if (crmService != null)
             {
                 Console.Clear();
                 Console.WriteLine("Obteniendo lista de Clientes Potenciales...");
@@ -145,7 +157,7 @@ namespace Consola.OrganizationService
 
         private static void CreateLead()
         {  
-            if(servicio != null)
+            if(crmService != null)
             {
                 try
                 {
@@ -182,7 +194,7 @@ namespace Consola.OrganizationService
         
         private static void GetLead()
         {
-            if(servicio != null){
+            if(crmService != null){
                 try
                 {
                     Console.Clear();
@@ -219,7 +231,7 @@ namespace Consola.OrganizationService
 
         private static void UpdateLead()
         {
-            if(servicio != null)
+            if(crmService != null)
             {
                 try
                 {
@@ -249,7 +261,7 @@ namespace Consola.OrganizationService
 
         private static void DeleteLead()
         {
-            if (servicio != null)
+            if (crmService != null)
             {
                 try
                 {
@@ -283,7 +295,7 @@ namespace Consola.OrganizationService
 
         private static void PrintLead(string firstname, string lastname, string emailaddress1, string jobtitle, string companyname)
         {
-            Console.WriteLine("Nombre: {0}\t\tApellido:{1}\t\tEmail:{2}\t\tPuesto:{3}\t\tEmpresa:{4}".FormatWith(firstname, lastname, emailaddress1, jobtitle, companyname));
+            Console.WriteLine("Nombre: {0}\t\tApellido:{1}\t\tEmail:{2}\t\tPuesto:{3}\t\tEmpresa:{4}".TextPlacecholders(firstname, lastname, emailaddress1, jobtitle, companyname));
         }
 
 
@@ -297,12 +309,12 @@ namespace Consola.OrganizationService
             lead["jobtitle"] = jobtitle;
             lead["companyname"] = companyname;
 
-            createEntityId = servicio.Create(lead);
+            createEntityId = crmService.Create(lead);
         }
 
         private static Entity GetEntity()
         {
-            return servicio.Retrieve("lead", createEntityId.Value, columns);
+            return crmService.Retrieve("lead", createEntityId.Value, columns);
         }
 
         private static void UpdateEntity(string firstname)
@@ -311,12 +323,12 @@ namespace Consola.OrganizationService
             lead.Id = createEntityId.Value;
             lead["firstname"] = firstname;
 
-            servicio.Update(lead);
+            crmService.Update(lead);
         }
 
         private static void DeleteEntity()
         {
-            servicio.Delete("lead", createEntityId.Value);
+            crmService.Delete("lead", createEntityId.Value);
         }
 
         private static EntityCollection RetrieveMultipleEntities()
@@ -324,7 +336,7 @@ namespace Consola.OrganizationService
             QueryExpression qe = new QueryExpression("lead");
             qe.ColumnSet = columns;
 
-            EntityCollection collection = servicio.RetrieveMultiple(qe);
+            EntityCollection collection = crmService.RetrieveMultiple(qe);
             return collection;
         }
 
@@ -343,7 +355,7 @@ namespace Consola.OrganizationService
             qe.Criteria = filter;
             qe.ColumnSet = columns;
 
-            EntityCollection collection = servicio.RetrieveMultiple(qe);
+            EntityCollection collection = crmService.RetrieveMultiple(qe);
             return collection;
         }
 

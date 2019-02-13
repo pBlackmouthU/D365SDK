@@ -39,4 +39,5 @@ namespace Librerias.Common
         /// </summary>
         public static readonly Regex PositiveNumberRegex = new Regex(@"^[1-9]+[0-9]*$");
     }
+
 }

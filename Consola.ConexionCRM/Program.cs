@@ -1,50 +1,31 @@
-﻿using Librerias.Crm.Conexion;
+﻿using System;
+using System.Configuration;
+using System.Net;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Tooling.Connector;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Consola.ConexionCRM
 {
     class Program
     {
-        static string connectionStringName = "Dev00";
+        private static CrmServiceClient _crmClient;
+        private static IOrganizationService crmService = null;
         static void Main(string[] args)
         {
-            try
-            {
-                ConexionSimple();
-            }
-            catch (FaultException<OrganizationServiceFault> osFaultException)
-            {
-                Console.WriteLine("Fault Exception caught");
-                Console.WriteLine(osFaultException.Detail.Message);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Uncaught Exception");
-                Console.WriteLine(e);
-            }
-
+            DynamicsConnection();  
             Console.ReadLine();
         }
 
-        static void ConexionSimple()
+        static void DynamicsConnection()
         {
-            using (SimpleConnection365 cnn = new SimpleConnection365(connectionStringName))
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            _crmClient = new CrmServiceClient(ConfigurationManager.ConnectionStrings["Dev01"].ConnectionString);
+            crmService = (IOrganizationService)_crmClient.OrganizationWebProxyClient != null ? (IOrganizationService)_crmClient.OrganizationWebProxyClient : (IOrganizationService)_crmClient.OrganizationServiceProxy;
+
+            if (_crmClient != null && _crmClient.IsReady)
             {
-                if (cnn != null)
-                {
-                    CrmServiceClient crmSvc = cnn.ObtenerCrmServiceClient();
-                    if (crmSvc != null && crmSvc.IsReady)
-                    {
-                        Console.WriteLine("Conectado a CRM! (Version{0}; Organization Unique Name: {1}, Organization Friendly Name: {2}, Endpoints: {3})", crmSvc.ConnectedOrgVersion, crmSvc.ConnectedOrgUniqueName, crmSvc.ConnectedOrgFriendlyName);
-                    }
-                }
+                Console.WriteLine("Conectado a CRM! (Version{0}; Organization Unique Name: {1}, Organization Friendly Name: {2}, Endpoints: {3})", _crmClient.ConnectedOrgVersion, _crmClient.ConnectedOrgUniqueName, _crmClient.ConnectedOrgFriendlyName);
             }
         }
 
