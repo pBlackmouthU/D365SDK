@@ -23,7 +23,7 @@ namespace Librerias.Crm.Conexion
         }
 
         public IOrganizationService ObtenerServicioConexion()
-        {
+        {         
             return _orgService;
         }
 

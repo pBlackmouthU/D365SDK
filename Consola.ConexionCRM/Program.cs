@@ -13,11 +13,11 @@ namespace Consola.ConexionCRM
         private static IOrganizationService crmService = null;
         static void Main(string[] args)
         {
-            DynamicsConnection();  
+            CrmConnect();  
             Console.ReadLine();
         }
 
-        static void DynamicsConnection()
+        static void CrmConnect()
         {
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             _crmClient = new CrmServiceClient(ConfigurationManager.ConnectionStrings["Dev01"].ConnectionString);
@@ -27,11 +27,6 @@ namespace Consola.ConexionCRM
             {
                 Console.WriteLine("Conectado a CRM! (Version{0}; Organization Unique Name: {1}, Organization Friendly Name: {2}, Endpoints: {3})", _crmClient.ConnectedOrgVersion, _crmClient.ConnectedOrgUniqueName, _crmClient.ConnectedOrgFriendlyName);
             }
-        }
-
-        static void CrmConnect()
-        {
-            
         }
 
         

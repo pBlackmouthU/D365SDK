@@ -16,20 +16,14 @@ namespace Consola.OrganizationService
 {
     public class Program
     {
-
         private static CrmServiceClient _crmClient;
-
-        //private static SimpleConnection365 cnn = null;
         private static IOrganizationService crmService = null;
+
         private static Guid? createEntityId = null;
         private static ColumnSet columns = null;
+
         static void Main(string[] args)
         {
-            //cnn = new SimpleConnection365("Dev00");
-            //if (cnn != null)
-            //{
-            //    crmService = cnn.ObtenerServicioConexion();
-            //}
 
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             _crmClient = new CrmServiceClient(ConfigurationManager.ConnectionStrings["Dev01"].ConnectionString);
@@ -147,13 +141,7 @@ namespace Consola.OrganizationService
 
                 PressEnter();
             }
-        }
-
-
-
-
-
-        
+        }        
 
         private static void CreateLead()
         {  
