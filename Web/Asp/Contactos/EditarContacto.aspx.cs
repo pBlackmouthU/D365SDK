@@ -51,7 +51,7 @@ namespace Web.Asp.Contactos
                 {
                     using (Metadata metadataSvc = new Metadata(cnn.ObtenerServicioConexion()))
                     {
-                        list = metadataSvc.ObtenerOptionSetEntidad("contact", "preferredcontactmethodcode");
+                        list = metadataSvc.GetEntityOptionSet("contact", "preferredcontactmethodcode");
                     }
                 }
             }
@@ -81,7 +81,7 @@ namespace Web.Asp.Contactos
                         con.Puesto = Puesto;
                         con.Cuenta = new CrmLookup(EmpresaID, null, "account");
                         con.MetodoContacto = new CrmPicklist(MetodoContacto);
-                        con.LimpiarAtributos(new string[] { "jobtitle" });
+                        con.ClearAttributes(new string[] { "jobtitle" });
                         
 
                         resp = contactoSvc.Guardar(con);

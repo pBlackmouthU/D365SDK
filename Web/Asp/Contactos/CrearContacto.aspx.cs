@@ -76,7 +76,7 @@ namespace Web.Asp
                 {
                     using (Metadata metadataSvc = new Metadata(cnn.ObtenerServicioConexion()))
                     {
-                        list = metadataSvc.ObtenerOptionSetEntidad("contact", "preferredcontactmethodcode");
+                        list = metadataSvc.GetEntityOptionSet("contact", "preferredcontactmethodcode");
                     }
                 }
             }

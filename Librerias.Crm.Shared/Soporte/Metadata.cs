@@ -18,7 +18,7 @@ namespace Librerias.Crm
             this._servicio = servicio;
         }
 
-        public List<CrmPicklist> ObtenerOptionSetGlobal(string optionsetName)
+        public List<CrmPicklist> GetGlobalOptionSet(string optionsetName)
         {
             List<CrmPicklist> lista = null;
 
@@ -67,7 +67,7 @@ namespace Librerias.Crm
         }
 
 
-        public List<CrmPicklist> ObtenerOptionSetEntidad(string NombreEntidad, string NombreAtributo)
+        public List<CrmPicklist> GetEntityOptionSet(string NombreEntidad, string NombreAtributo)
         {
 
             List<CrmPicklist> lista = null;

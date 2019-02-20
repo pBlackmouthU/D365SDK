@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Librerias.Crm
 {
-    public class CuentaServicio : ServicioBaseCRM, IDisposable
+    public class CuentaServicio : CrmServiceBase, IDisposable
     {
         private string[] _columnas = new string[] { "accountid", "name" };
         private string _nombreEntidad = "account";
@@ -22,7 +22,7 @@ namespace Librerias.Crm
             Respuesta resp = new Respuesta();
             try
             {
-                Entity entity = cuenta.MapearEntidad();
+                Entity entity = cuenta.MapEntity();
 
                 if (cuenta.CuentaID == null)
                 {

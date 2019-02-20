@@ -10,7 +10,7 @@ using System.Web.Services.Protocols;
 
 namespace Librerias.Crm
 {
-    public partial class ContactoServicio : ServicioBaseCRM, IDisposable
+    public partial class ContactoServicio : CrmServiceBase, IDisposable
     {
 
         private string[] _columnas = new string[] { "contactid", "firstname", "lastname", "jobtitle", "parentcustomerid","preferredcontactmethodcode" };
@@ -30,7 +30,7 @@ namespace Librerias.Crm
             Respuesta resp = new Respuesta();
             try
             {
-                Entity entity = contacto.MapearEntidad();
+                Entity entity = contacto.MapEntity();
 
                 if (contacto.ContactoID == null)
                 {

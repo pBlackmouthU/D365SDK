@@ -19,7 +19,7 @@ namespace Librerias.Crm.Conexion
         {
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             _crmClient = new CrmServiceClient(ConfigurationManager.ConnectionStrings[connectionStringName].ConnectionString);
-            _orgService = (IOrganizationService)_crmClient.OrganizationWebProxyClient != null ? (IOrganizationService)_crmClient.OrganizationWebProxyClient : (IOrganizationService)_crmClient.OrganizationServiceProxy;
+            _orgService = (IOrganizationService)_crmClient.OrganizationWebProxyClient != null ? (IOrganizationService)_crmClient.OrganizationWebProxyClient : (IOrganizationService)_crmClient.OrganizationServiceProxy;            
         }
 
         public IOrganizationService ObtenerServicioConexion()

@@ -8,7 +8,7 @@ using Librerias.Common;
 
 namespace Librerias.Crm
 {
-    public partial class Cuenta : EntidadCrm
+    public partial class Cuenta : CrmEntity
     {
         private static string _entityName = "account";
 
@@ -25,7 +25,7 @@ namespace Librerias.Crm
 
 
 
-        protected override void ObtenerObjetoEntity()
+        protected override void GetEntityObject()
         {
             _entity = new Entity(_entityName);
 

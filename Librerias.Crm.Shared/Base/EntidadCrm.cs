@@ -7,26 +7,26 @@ using System.Threading.Tasks;
 
 namespace Librerias.Crm
 {
-    public class EntidadCrm : IEntidadCrm
+    public class CrmEntity : ICrmEntity
     {
         protected Entity _entity;
 
-        public EntidadCrm(string entityName)
+        public CrmEntity(string entityName)
         {
             _entity = new Entity(entityName);
         }
-        public virtual Entity MapearEntidad()
+        public virtual Entity MapEntity()
         {
-            ObtenerObjetoEntity();
+            GetEntityObject();
             return _entity;
         }
 
-        protected virtual void ObtenerObjetoEntity()
+        protected virtual void GetEntityObject()
         {
             throw new NotImplementedException();
         }
 
-        public void LimpiarAtributos(string[] Atributos)
+        public void ClearAttributes(string[] Atributos)
         {
             foreach(string attr in Atributos)
             {

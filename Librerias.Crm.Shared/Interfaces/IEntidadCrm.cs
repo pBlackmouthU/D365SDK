@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Librerias.Crm
 {
-    public interface IEntidadCrm
+    public interface ICrmEntity
     {
-        Entity MapearEntidad();
+        Entity MapEntity();
     }
 }

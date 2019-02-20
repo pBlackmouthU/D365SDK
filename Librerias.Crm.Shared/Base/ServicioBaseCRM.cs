@@ -8,11 +8,11 @@ using System.Web.Services.Protocols;
 
 namespace Librerias.Crm
 {
-    public abstract class ServicioBaseCRM 
+    public abstract class CrmServiceBase 
     {
 
         protected IOrganizationService _servicio;
-        public ServicioBaseCRM(IOrganizationService servicio)
+        public CrmServiceBase(IOrganizationService servicio)
         {
             _servicio = servicio;
         }

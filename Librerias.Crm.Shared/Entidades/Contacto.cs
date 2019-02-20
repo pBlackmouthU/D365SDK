@@ -8,7 +8,7 @@ using Librerias.Common;
 
 namespace Librerias.Crm
 {
-    public partial class Contacto : EntidadCrm
+    public partial class Contacto : CrmEntity
     {
         private static string _entityName = "contact";
         public Contacto()
@@ -34,7 +34,7 @@ namespace Librerias.Crm
         public CrmPicklist MetodoContacto { get; set; }
 
 
-        protected override void ObtenerObjetoEntity()
+        protected override void GetEntityObject()
         {
             try
             {
